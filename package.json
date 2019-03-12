@@ -1,0 +1,11 @@
+{
+  "name": "jg.incomereport",
+  "version": "1.0.0",
+  "description": "\"JG donation/income report for interview\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Hedges",
+  "license": "ISC"
+}
