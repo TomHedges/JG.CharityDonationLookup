@@ -4,7 +4,9 @@ Very basic React implementation, avoiding create-react-app to reduce overhead an
 Built in response to [Recruitment Test - Charity Donations](https://github.com/JustGiving/recruitment-test-donations)
 
 Key sources of info:
-* [Creating a React App… From Scratch](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)
+
+- [Creating a React App From Scratch](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658)
+- [Tutorial: How to set up React, webpack, and Babel 7 from scratch (2019)](https://www.valentinog.com/blog/react-webpack-babel/)
 
 ## Getting Started:
 
@@ -16,4 +18,4 @@ _This project created in a Windows 10, VSCode 1.30 environment_
 
 ## Key details:
 
-* xyz
+- xyz
