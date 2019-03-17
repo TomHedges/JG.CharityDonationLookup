@@ -18,4 +18,15 @@ _This project created in a Windows 10, VSCode 1.30 environment_
 
 ## Key details:
 
-- xyz
+### Dependecies:
+
+- React core framework
+- Babel
+- Webpack
+- React Hot Loader - to provide immediate refresh on file update
+- Axios - performing HTTP requests
+
+### Dev Dependencies:
+
+- Jest - test runner
+- Enzyme - testing utility
