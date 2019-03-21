@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./styles/App.css"
+      media="screen"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <title>JG income/donation report</title>
+  </head>
+
+  <body>
+    <div class="App">
+      <div class="header_content side_pad">
+        <img src="./img/jg_logo.svg" class="jg_logo" />
+        <h1>JustGiving Donations Summary</h1>
+      </div>
+      <div class="main_content side_pad">
+        <div class="charity_selection">
+          <form>
+            <label for="charity_id">
+              Please enter Charity ID and select charity from dropdown list:
+            </label>
+            <input id="charity_id" type="text" class="charity_id_selector" />
+          </form>
+        </div>
+        <div class="charity_details">
+          <h2>Charity Details:</h2>
+          <div class="charity_details_column_wrapper">
+            <div class="charity_details_column_left">
+              <p>
+                <a href="">
+                  <img src="./img/jg_logo.svg" class="charity_logo" />
+                </a>
+              </p>
+              <p class="centred_text"><a href="">www.website.charity</a></p>
+              <p class="centred_text">Reg. Charity Number: 123456</p>
+            </div>
+            <div class="charity_details_column_right">
+              <h3>Amazing Charity Name</h3>
+              <p>
+                Charity description... Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Integer dapibus placerat tortor, vitae maximus
+                ante mollis eu. Phasellus vitae luctus orci, ut luctus urna. Sed
+                hendrerit nibh enim, quis luctus diam tempor suscipit. Sed magna
+                nisi, tincidunt sit amet semper in, commodo vel urna. Nunc sit
+                amet odio non erat ultrices luctus eu sit amet ante. Quisque
+                erat orci, ullamcorper eu risus et, tristique commodo lorem.
+                Nulla pellentesque, nibh ut suscipit feugiat, nisi enim
+                vulputate nisi, sit amet dignissim sapien elit non lorem.
+                Vivamus cursus commodo enim, id elementum eros facilisis eget.
+                In vitae odio pellentesque, laoreet mauris condimentum,
+                vestibulum ligula. Nam ullamcorper orci vitae odio fermentum
+                dignissim.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="donations">
+          <h2>Recent Donations:</h2>
+          <p class="refresh_message">Last refreshed: dd/mm/yyyy @ hh:mm:ss</p>
+          <div>
+            <div class="donation_wrapper">
+              <div class="donation_column_left">
+                <img class="unknown_avatar" width="36" height="36" />
+              </div>
+              <div class="donation_column_right">
+                <p class="donation_date">12/12/2012</p>
+                <p class="donor_name">Donor Name</p>
+                <p>Here is the donor comment</p>
+                <p class="donation_amount">£0,000.00</p>
+              </div>
+            </div>
+            <div class="donation_wrapper">
+              <div class="donation_column_left">
+                <img class="unknown_avatar" width="36" height="36" />
+              </div>
+              <div class="donation_column_right">
+                <p class="donation_date">12/12/2012</p>
+                <p class="donor_name">Donor Name</p>
+                <p>Here is the donor comment</p>
+                <p class="donation_amount">£0,000.00</p>
+              </div>
+            </div>
+            <div class="donation_wrapper">
+              <div class="donation_column_left">
+                <img class="unknown_avatar" width="36" height="36" />
+              </div>
+              <div class="donation_column_right">
+                <p class="donation_date">12/12/2012</p>
+                <p class="donor_name">Donor Name</p>
+                <p>Here is the donor comment</p>
+                <p class="donation_amount">£0,000.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_content side_pad">
+      <p>© Tom Hedges 2019</p>
+    </div>
+  </body>
+</html>

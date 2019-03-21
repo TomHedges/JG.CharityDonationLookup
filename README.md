@@ -30,3 +30,7 @@ _This project created in a Windows 10, VSCode 1.30 environment_
 
 - Jest - test runner
 - Enzyme - testing utility
+
+### Other info:
+
+- Open "exampleContent.html" in your browser to see a mockup page used to refine the visual design and componenet structure
