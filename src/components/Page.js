@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import XRemainder from "./XRemainder";
 import HeaderContent from "./HeaderContent";
 import FooterContent from "./FooterContent";
+import MainContent from "./MainContent";
 
 class Page extends Component {
   render() {
@@ -10,7 +10,7 @@ class Page extends Component {
     return (
       <>
         <HeaderContent heading={HEADING} />
-        <XRemainder />
+        <MainContent />
         <FooterContent heading={HEADING} />
       </>
     );
