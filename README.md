@@ -30,7 +30,9 @@ _This project created in a Windows 10, VSCode 1.30 environment_
 
 - Jest - test runner
 - Enzyme - testing utility
+- URL Loader - converting small images into Base64 for faster loading
+- File Loader - serving larger images as separate files
 
 ### Other info:
 
-- Open "exampleContent.html" in your browser to see a mockup page used to refine the visual design and componenet structure
+- Open "test/exampleContent.html" in your browser to see a mocked-up page used to refine the visual design and component structure
