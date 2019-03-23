@@ -82,6 +82,6 @@ export function handleChange(event) {
         }
       });
   }
-  this.preventDefault();
+
   return null;
 }
