@@ -25,6 +25,7 @@ _This project created in a Windows 10, VSCode 1.30 environment_
 - Webpack
 - React Hot Loader - to provide immediate refresh on file update
 - Axios - performing HTTP requests
+- Webfontloader - Prevent Google Font Roboto from triggering Google Page Speed ("Render Blocking CSS")
 
 ### Dev Dependencies:
 

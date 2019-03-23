@@ -8,7 +8,13 @@ import Donations from "./Donations";
 const MainContent = props => (
   <div className="main_content side_pad">
     <CharitySelection />
-    <CharityDetails />
+    <CharityDetails
+      charity_logo_url={""}
+      charity_website={""}
+      charity_number={""}
+      charity_name={""}
+      charity_description={""}
+    />
     <Donations />
   </div>
 );

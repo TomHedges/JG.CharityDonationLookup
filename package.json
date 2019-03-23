@@ -38,7 +38,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-hot-loader": "^4.8.0"
+    "react-hot-loader": "^4.8.0",
+    "webfontloader": "^1.6.28"
   },
   "jest": {
     "setupFilesAfterEnv": [

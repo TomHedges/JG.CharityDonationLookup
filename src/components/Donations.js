@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import PropTypes from "prop-types";
 import "../styles/jgdr_styles.css";
 import Donation from "./Donation";
 
@@ -11,22 +10,38 @@ class Donations extends Component {
         <h2>Recent Donations:</h2>
         <p className="refresh_message">Last refreshed: dd/mm/yyyy @ hh:mm:ss</p>
         <div>
-          <Donation />
-          <Donation />
-          <Donation />
-          <Donation />
+          <Donation
+            donor_avatar_url={""}
+            donation_date={""}
+            donor_name={""}
+            donor_comment={""}
+            donation_amount={""}
+          />
+          <Donation
+            donor_avatar_url={""}
+            donation_date={""}
+            donor_name={""}
+            donor_comment={""}
+            donation_amount={""}
+          />
+          <Donation
+            donor_avatar_url={""}
+            donation_date={""}
+            donor_name={""}
+            donor_comment={""}
+            donation_amount={""}
+          />
+          <Donation
+            donor_avatar_url={""}
+            donation_date={""}
+            donor_name={""}
+            donor_comment={""}
+            donation_amount={""}
+          />
         </div>
       </div>
     );
   }
 }
-
-Donations.propTypes = {
-  logo_url: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired,
-  charity_number: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
-};
 
 export default hot(module)(Donations);

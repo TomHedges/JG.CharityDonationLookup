@@ -19,7 +19,7 @@ const Donation = props => (
 );
 
 Donation.propTypes = {
-  avatar_url: PropTypes.string.isRequired,
+  donor_avatar_url: PropTypes.string.isRequired,
   donation_date: PropTypes.string.isRequired,
   donor_name: PropTypes.string.isRequired,
   donor_comment: PropTypes.string.isRequired,

@@ -41,11 +41,11 @@ const CharityDetails = props => (
 );
 
 CharityDetails.propTypes = {
-  logo_url: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired,
+  charity_logo_url: PropTypes.string.isRequired,
+  charity_website: PropTypes.string.isRequired,
   charity_number: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  charity_name: PropTypes.string.isRequired,
+  charity_description: PropTypes.string.isRequired
 };
 
 export default hot(module)(CharityDetails);
