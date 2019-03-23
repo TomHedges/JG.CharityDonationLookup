@@ -1,17 +1,30 @@
 import axios from "axios";
 
 export function handleChange(event) {
-  this.setState({ charityID: event.target.value });
+  this.setState({
+    charity_ID: event.target.value,
+    show_list: true
+  });
+
+  const blank_charity_details = {
+    charity_logo_url: "",
+    charity_website: "",
+    charity_number: "",
+    charity_name: "",
+    charity_description: ""
+  };
 
   if ((event.target.value === null) | (event.target.value === "")) {
     this.setState({
-      charity_details: "",
-      charity_slugs: []
+      charity_details_found: blank_charity_details,
+      charity_slugs: [],
+      charity_found: false
     });
   } else {
     this.setState({
-      charity_details: "",
-      charity_slugs: ["Loading..."]
+      charity_details_found: blank_charity_details,
+      charity_slugs: ["Loading..."],
+      charity_found: false
     });
 
     let instance = axios.create({
@@ -53,7 +66,7 @@ export function handleChange(event) {
         "https://api.justgiving.com/975998a1/v1/charity/" + event.target.value
       )
       .then(res => {
-        const charity_details = {
+        const charity_details_found = {
           charity_name: res.data.name,
           charity_logo_url: res.data.logoAbsoluteUrl,
           charity_website: res.data.websiteUrl,
@@ -66,22 +79,39 @@ export function handleChange(event) {
             res.data.registrationNumber +
             ")"
         ];
-        this.setState({ charity_details, charity_slugs });
+        this.setState({
+          charity_details_found,
+          charity_slugs,
+          charity_found: true
+        });
       })
       .catch(error => {
-        if ((this.state.charityID === null) | (this.state.charityID === "")) {
+        if ((this.state.charity_ID === null) | (this.state.charity_ID === "")) {
           this.setState({
-            charity_details: "",
-            charity_slugs: []
+            charity_details_found: blank_charity_details,
+            charity_slugs: [],
+            charity_found: false
           });
         } else {
           this.setState({
-            charity_details: "",
-            charity_slugs: ["Sorry, no charity with that ID"]
+            charity_details_found: blank_charity_details,
+            charity_slugs: ["Sorry, no charity with that ID"],
+            charity_found: false
           });
         }
       });
   }
 
+  return null;
+}
+
+export function handleClick(event) {
+  if (this.state.charity_found) {
+    this.setState({
+      charity_selected: true,
+      charity_details_displayed: this.state.charity_details_found,
+      show_list: false
+    });
+  }
   return null;
 }

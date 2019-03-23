@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import PropTypes from "prop-types";
 import "../styles/jgdr_styles.css";
-import example_logo from "./../images/example_logo.png";
 
 const CharityDetails = props => (
   <div className="charity_details">
@@ -11,41 +10,38 @@ const CharityDetails = props => (
       <div className="charity_details_column_left">
         <p>
           <a href="">
-            <img src={example_logo} className="charity_logo" />
+            <img
+              src={props.charity_details_displayed.charity_logo_url}
+              className="charity_logo"
+            />
           </a>
         </p>
         <p className="centred_text">
-          <a href="">www.charity.website</a>
+          <a href={props.charity_details_displayed.charity_website}>
+            {props.charity_details_displayed.charity_website}
+          </a>
         </p>
-        <p className="centred_text">Reg. Charity Number: 123456</p>
+        <p className="centred_text">
+          Reg. Charity Number: {props.charity_details_displayed.charity_number}
+        </p>
       </div>
       <div className="charity_details_column_right">
-        <h3>Amazing Charity Name</h3>
-        <p>
-          Charity description... Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Integer dapibus placerat tortor, vitae maximus ante
-          mollis eu. Phasellus vitae luctus orci, ut luctus urna. Sed hendrerit
-          nibh enim, quis luctus diam tempor suscipit. Sed magna nisi, tincidunt
-          sit amet semper in, commodo vel urna. Nunc sit amet odio non erat
-          ultrices luctus eu sit amet ante. Quisque erat orci, ullamcorper eu
-          risus et, tristique commodo lorem. Nulla pellentesque, nibh ut
-          suscipit feugiat, nisi enim vulputate nisi, sit amet dignissim sapien
-          elit non lorem. Vivamus cursus commodo enim, id elementum eros
-          facilisis eget. In vitae odio pellentesque, laoreet mauris
-          condimentum, vestibulum ligula. Nam ullamcorper orci vitae odio
-          fermentum dignissim.
-        </p>
+        <h3>{props.charity_details_displayed.charity_name}</h3>
+        <p>{props.charity_details_displayed.charity_description}</p>
       </div>
     </div>
   </div>
 );
 
 CharityDetails.propTypes = {
-  charity_logo_url: PropTypes.string.isRequired,
-  charity_website: PropTypes.string.isRequired,
-  charity_number: PropTypes.string.isRequired,
-  charity_name: PropTypes.string.isRequired,
-  charity_description: PropTypes.string.isRequired
+  charity_details_displayed: PropTypes.shape({
+    charity_logo_url: PropTypes.string.isRequired,
+    charity_website: PropTypes.string.isRequired,
+    charity_number: PropTypes.string.isRequired,
+    charity_name: PropTypes.string.isRequired,
+    charity_description: PropTypes.string.isRequired
+  }),
+  charity_selected: PropTypes.bool.isRequired
 };
 
 export default hot(module)(CharityDetails);
