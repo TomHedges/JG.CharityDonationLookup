@@ -26,6 +26,7 @@
     "enzyme-adapter-react-16": "^1.11.2",
     "file-loader": "^3.0.1",
     "jest": "^24.5.0",
+    "jest-svg-transformer": "^1.0.0",
     "react-test-renderer": "^16.8.4",
     "style-loader": "^0.23.0",
     "url-loader": "^1.1.2",
@@ -42,8 +43,19 @@
     "webfontloader": "^1.6.28"
   },
   "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>src/setupTests.js"
-    ]
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "setupFiles": [
+      "<rootDir>/test/setupTests.js"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.svg$": "jest-svg-transformer"
+    }
   }
 }

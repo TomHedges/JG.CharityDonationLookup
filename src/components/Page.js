@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
+import "../styles/jgdr_styles.css";
 import HeaderContent from "./HeaderContent";
 import FooterContent from "./FooterContent";
 import MainContent from "./MainContent";

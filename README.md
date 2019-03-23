@@ -29,8 +29,9 @@ _This project created in a Windows 10, VSCode 1.30 environment_
 
 ### Dev Dependencies:
 
-- Jest - test runner
-- Enzyme - testing utility
+- Jest - JavaScript test runner
+- Jest SVG Transformer - handles SVG import for local images in tests
+- Enzyme - additional React test functionality
 - URL Loader - converting small images into Base64 for faster loading
 - File Loader - serving larger images as separate files
 
