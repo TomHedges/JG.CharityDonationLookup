@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const CharitySelection = props => {
   const listItems = props.charity_slugs.map(slug => (
-    <span key={slug} onClick={props.handleClick}>
+    <span key={slug} onClick={props.handleClick} className="charity_result">
       {slug}
     </span>
   ));

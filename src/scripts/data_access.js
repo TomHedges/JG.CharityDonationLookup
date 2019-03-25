@@ -20,6 +20,7 @@ export function get_charity_details(charity_ID) {
           charity_number: response.data.registrationNumber,
           charity_description: response.data.description
         },
+        charity_ID_searched: charity_ID,
         charity_slugs: [
           response.data.name +
             " (Reg. Charity No. " +
@@ -36,6 +37,7 @@ export function get_charity_details(charity_ID) {
           charity_number: "",
           charity_description: ""
         },
+        charity_ID_searched: charity_ID,
         charity_slugs: [response.error]
       };
     }

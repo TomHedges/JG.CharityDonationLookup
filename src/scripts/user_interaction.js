@@ -14,20 +14,26 @@ export function handleChange(event) {
     this.setState({
       charity_ID: "",
       charity_details_found: blank_charity_details,
+      charity_ID_searched: "",
       charity_slugs: [],
       charity_found: false
     });
   } else {
     this.setState({
       charity_ID: value,
+      charity_ID_searched: value,
       charity_details_found: blank_charity_details,
       charity_slugs: ["Loading..."],
       charity_found: false
     });
 
     get_charity_details(value).then(state_updates => {
-      if (this.state.charity_ID !== "") {
+      if (
+        this.state.charity_ID !== "" &&
+        this.state.charity_ID_searched === state_updates.charity_ID_searched
+      ) {
         this.setState({
+          charity_found: true,
           charity_details_found: state_updates.charity_details_found,
           charity_slugs: state_updates.charity_slugs
         });
