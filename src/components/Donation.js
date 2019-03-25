@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import PropTypes from "prop-types";
-import "../styles/jgdr_styles.css";
 import unknown_avatar from "./../images/unknown_avatar.svg";
 
 const Donation = props => (

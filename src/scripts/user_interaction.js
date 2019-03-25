@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_KEY } from "../api/api_key";
 
 export function handleChange(event) {
   this.setState({
@@ -63,7 +64,10 @@ export function handleChange(event) {
 
     instance
       .get(
-        "https://api.justgiving.com/975998a1/v1/charity/" + event.target.value
+        "https://api.justgiving.com/" +
+          API_KEY +
+          "/v1/charity/" +
+          event.target.value
       )
       .then(res => {
         const charity_details_found = {
@@ -114,4 +118,8 @@ export function handleClick(event) {
     });
   }
   return null;
+}
+
+export function handleSubmit(event) {
+  event.preventDefault();
 }

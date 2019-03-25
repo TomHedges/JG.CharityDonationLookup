@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import "../styles/jgdr_styles.css";
 import CharitySelection from "./CharitySelection";
 import CharityDetails from "./CharityDetails";
 import Donations from "./Donations";
-import { handleChange } from "./../scripts/charitySelection.js";
-import { handleClick } from "./../scripts/charitySelection.js";
+import { handleChange } from "../scripts/user_interaction.js";
+import { handleClick } from "../scripts/user_interaction.js";
+import { handleSubmit } from "../scripts/user_interaction.js";
 
 class MainContent extends Component {
   constructor(props) {
@@ -34,6 +34,7 @@ class MainContent extends Component {
 
     this.handleChange = handleChange.bind(this);
     this.handleClick = handleClick.bind(this);
+    this.handleSubmit = handleSubmit.bind(this);
   }
 
   render() {
@@ -42,6 +43,7 @@ class MainContent extends Component {
         <CharitySelection
           handleChange={this.handleChange}
           handleClick={this.handleClick}
+          handleSubmit={this.handleSubmit}
           charity_ID={this.state.charity_ID}
           charity_slugs={this.state.charity_slugs}
           charity_selected={this.state.charity_selected}

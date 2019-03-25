@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import "../styles/jgdr_styles.css";
 import Donation from "./Donation";
 
 class Donations extends Component {

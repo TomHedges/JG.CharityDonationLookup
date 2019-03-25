@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import "../styles/jgdr_styles.css";
 import PropTypes from "prop-types";
 
 const CharitySelection = props => {
@@ -17,19 +16,21 @@ const CharitySelection = props => {
 
   return (
     <div className="charity_selection">
-      <label htmlFor="charity_id">
-        Please enter Charity ID and select charity from dropdown list:
-      </label>
-      <div className="dropdown_wrapper">
-        <input
-          id="charity_id"
-          type="text"
-          className="charity_id_selector"
-          value={props.charityID}
-          onChange={props.handleChange}
-        />
-        <div className={dropdown_class}>{listItems}</div>
-      </div>
+      <form onSubmit={props.handleSubmit}>
+        <label htmlFor="charity_id">
+          Please enter Charity ID and select charity from dropdown list:
+        </label>
+        <div className="dropdown_wrapper">
+          <input
+            id="charity_id"
+            type="text"
+            className="charity_id_selector"
+            value={props.charity_ID}
+            onChange={props.handleChange}
+          />
+          <div className={dropdown_class}>{listItems}</div>
+        </div>
+      </form>
     </div>
   );
 };
@@ -37,6 +38,7 @@ const CharitySelection = props => {
 CharitySelection.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   charity_slugs: PropTypes.array.isRequired,
   charity_ID: PropTypes.string.isRequired,
   charity_selected: PropTypes.bool.isRequired,
