@@ -13,8 +13,11 @@ Key sources of info:
 _This project created in a Windows 10, VSCode 1.30 environment_
 
 1. Clone this repo
-2. Install dependencies with 'npm install'
-3. Run in dev mode with 'npm start'
+2. Create a [JustGiving Developer](https://developer.justgiving.com/) account to obtain an `appId`
+3. Rename 'src/constants/api_key.change_to_just_js' to 'src/constants/api_key.js' (change only file extension)
+4. In the renamed file, replace `YOUR_JG_API_KEY` with the `appId` from step 2. Save and close file.
+5. Install dependencies with 'npm install'
+6. Run in dev mode with 'npm start'
 
 ## Key details:
 
