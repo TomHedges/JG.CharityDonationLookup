@@ -29,6 +29,8 @@ class MainContent extends Component {
         charity_description: ""
       },
       charity_slugs: [],
+      timestamp: "",
+      donations: [],
       show_list: true
     };
 
@@ -55,7 +57,10 @@ class MainContent extends Component {
               charity_selected={this.state.charity_selected}
               charity_details_displayed={this.state.charity_details_displayed}
             />
-            <Donations />
+            <Donations
+              donations={this.state.donations}
+              timestamp={this.state.timestamp}
+            />
           </>
         ) : null}
       </div>

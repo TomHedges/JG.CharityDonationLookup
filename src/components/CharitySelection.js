@@ -9,10 +9,10 @@ const CharitySelection = props => {
     </span>
   ));
 
-  //const dropdown_class =
-  //  props.show_list === true
-  //    ? "dropdown_content_shown"
-  //    : "dropdown_content_hidden";
+  const dropdown_class =
+    props.show_list === true
+      ? "dropdown_content_shown"
+      : "dropdown_content_hidden";
 
   return (
     <div className="charity_selection">
@@ -28,7 +28,7 @@ const CharitySelection = props => {
             value={props.charity_ID}
             onChange={props.handleChange}
           />
-          <div className="dropdown_content_shown">{listItems}</div>
+          <div className={dropdown_class}>{listItems}</div>
         </div>
       </form>
     </div>

@@ -1,4 +1,5 @@
 import { get_charity_details } from "./../scripts/data_access";
+import { get_recent_donations } from "./../scripts/data_access";
 
 export function handleChange(event) {
   const value = event.target.value;
@@ -24,7 +25,8 @@ export function handleChange(event) {
       charity_ID_searched: value,
       charity_details_found: blank_charity_details,
       charity_slugs: ["Loading..."],
-      charity_found: false
+      charity_found: false,
+      show_list: true
     });
 
     get_charity_details(value).then(state_updates => {
@@ -44,11 +46,23 @@ export function handleChange(event) {
 
 export function handleClick(event) {
   if (this.state.charity_found) {
-    this.setState({
-      charity_selected: true,
-      charity_details_displayed: this.state.charity_details_found,
-      show_list: false
-    });
+    this.setState(
+      {
+        charity_selected: true,
+        charity_details_displayed: this.state.charity_details_found,
+        show_list: false
+      },
+      () => {
+        get_recent_donations(this.state.charity_ID).then(state_updates => {
+          console.log(state_updates);
+          const timestamp = Date.now();
+          this.setState({
+            timestamp: timestamp,
+            donations: state_updates.donations
+          });
+        });
+      }
+    );
   }
 }
 

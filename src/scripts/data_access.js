@@ -45,3 +45,34 @@ export function get_charity_details(charity_ID) {
     return state_updates;
   });
 }
+
+export function get_recent_donations(charity_ID) {
+  const url = URL_CHARITY_DETAILS + charity_ID + "/donations";
+  return http_request(url, headers).then(response => {
+    console.log(response);
+    let state_updates = {};
+
+    if (response.status === HTTP_RESULT_STATUS.SUCCESS) {
+      let donations = [];
+      let i;
+      for (i = 0; i < response.data.donations.length; i++) {
+        let donation = {};
+        donation.donor_name = response.data.donations[i].donorDisplayName;
+        donation.donation_date = response.data.donations[i].donationDate;
+        donation.donor_comment = response.data.donations[i].message;
+        donation.donation_amount = response.data.donations[i].amount;
+        donation.donor_avatar = response.data.donations[i].imageUrl;
+        donations.push(donation);
+      }
+      state_updates = {
+        donations: donations
+      };
+    } else {
+      state_updates = {
+        donations: []
+      };
+    }
+
+    return state_updates;
+  });
+}
