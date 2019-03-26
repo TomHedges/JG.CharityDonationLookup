@@ -112,7 +112,6 @@ a:hover {
   font-size: 14.4999px;
   font-weight: 400;
   padding-top: 5px;
-  padding-left: 30px;
 }
 
 .unknown_avatar {
@@ -179,6 +178,13 @@ a:hover {
 .donation_amount {
   color: rgb(172, 41, 181);
   font-size: 22px;
+  font-weight: 400;
+}
+
+.tax_reclaim {
+  padding-left: 10px;
+  color: rgb(172, 41, 181);
+  font-size: 14px;
   font-weight: 400;
 }
 

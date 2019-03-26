@@ -49,19 +49,44 @@ export function get_charity_details(charity_ID) {
 export function get_recent_donations(charity_ID) {
   const url = URL_CHARITY_DETAILS + charity_ID + "/donations";
   return http_request(url, headers).then(response => {
-    console.log(response);
     let state_updates = {};
 
     if (response.status === HTTP_RESULT_STATUS.SUCCESS) {
+      console.log(response.data.donations);
       let donations = [];
       let i;
       for (i = 0; i < response.data.donations.length; i++) {
         let donation = {};
-        donation.donor_name = response.data.donations[i].donorDisplayName;
-        donation.donation_date = response.data.donations[i].donationDate;
-        donation.donor_comment = response.data.donations[i].message;
-        donation.donation_amount = response.data.donations[i].amount;
-        donation.donor_avatar = response.data.donations[i].imageUrl;
+        donation.donor_name = response.data.donations[i].donorDisplayName
+          ? response.data.donations[i].donorDisplayName
+          : "";
+        donation.donation_date = response.data.donations[i].donationDate
+          ? response.data.donations[i].donationDate
+          : "";
+        donation.donor_comment = response.data.donations[i].message
+          ? response.data.donations[i].message
+          : "";
+        donation.donation_amount = response.data.donations[i].amount
+          ? response.data.donations[i].amount
+          : 0;
+        donation.donation_tax_reclaim = response.data.donations[i]
+          .estimatedTaxReclaim
+          ? response.data.donations[i].estimatedTaxReclaim
+          : 0;
+        donation.donation_currency = response.data.donations[i].currencyCode
+          ? response.data.donations[i].currencyCode
+          : "";
+        donation.donation_currency_local = response.data.donations[i]
+          .donorLocalCurrencyCode
+          ? response.data.donations[i].donorLocalCurrencyCode
+          : "";
+        donation.donation_amount_local = response.data.donations[i]
+          .donorLocalAmount
+          ? response.data.donations[i].donorLocalAmount
+          : 0;
+        donation.donor_avatar_url = response.data.donations[i].imageUrl
+          ? response.data.donations[i].imageUrl
+          : "";
         donations.push(donation);
       }
       state_updates = {

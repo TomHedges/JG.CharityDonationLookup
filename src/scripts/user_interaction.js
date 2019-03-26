@@ -55,7 +55,8 @@ export function handleClick(event) {
       () => {
         get_recent_donations(this.state.charity_ID).then(state_updates => {
           console.log(state_updates);
-          const timestamp = Date.now();
+          const date = new Date();
+          const timestamp = date.toLocaleString();
           this.setState({
             timestamp: timestamp,
             donations: state_updates.donations
@@ -68,4 +69,8 @@ export function handleClick(event) {
 
 export function handleSubmit(event) {
   event.preventDefault();
+}
+
+function getTwoDigitNumber(number) {
+  return number < 10 ? "0" + number : "" + number;
 }
