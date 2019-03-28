@@ -13,6 +13,7 @@ export function get_charity_details(charity_ID) {
 
     if (response.status === HTTP_RESULT_STATUS.SUCCESS) {
       state_updates = {
+        charity_was_found: true,
         charity_details_found: {
           charity_name: response.data.name,
           charity_logo_url: response.data.logoAbsoluteUrl,
@@ -21,15 +22,16 @@ export function get_charity_details(charity_ID) {
           charity_description: response.data.description
         },
         charity_ID_searched: charity_ID,
-        charity_slugs: [
+        charity_slug:
           response.data.name +
-            " (Reg. Charity No. " +
-            response.data.registrationNumber +
-            ")"
-        ]
+          " (Reg. Charity No. " +
+          response.data.registrationNumber +
+          ")"
       };
     } else {
       state_updates = {
+        charity_was_found: false,
+        charity_ID_searched: charity_ID,
         charity_details_found: {
           charity_name: "",
           charity_logo_url: "",
@@ -37,8 +39,7 @@ export function get_charity_details(charity_ID) {
           charity_number: "",
           charity_description: ""
         },
-        charity_ID_searched: charity_ID,
-        charity_slugs: [response.error]
+        charity_slug: response.error
       };
     }
 
@@ -52,7 +53,7 @@ export function get_recent_donations(charity_ID) {
     let state_updates = {};
 
     if (response.status === HTTP_RESULT_STATUS.SUCCESS) {
-      console.log(response.data.donations);
+      //console.log(response.data.donations);
       let donations = [];
       let i;
       for (i = 0; i < response.data.donations.length; i++) {

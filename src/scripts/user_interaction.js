@@ -16,28 +16,28 @@ export function handleChange(event) {
       charity_ID: "",
       charity_details_found: blank_charity_details,
       charity_ID_searched: "",
-      charity_slugs: [],
-      charity_found: false
+      charity_slug: ""
     });
   } else {
     this.setState({
       charity_ID: value,
       charity_ID_searched: value,
       charity_details_found: blank_charity_details,
-      charity_slugs: ["Loading..."],
-      charity_found: false,
+      charity_was_found: false,
+      charity_slug: "Loading...",
       show_list: true
     });
 
     get_charity_details(value).then(state_updates => {
       if (
-        this.state.charity_ID !== "" &&
+        //state_updates.charity_was_found === true &&
+        //this.state.charity_ID !== "" &&
         this.state.charity_ID_searched === state_updates.charity_ID_searched
       ) {
         this.setState({
-          charity_found: true,
+          charity_was_found: state_updates.charity_was_found,
           charity_details_found: state_updates.charity_details_found,
-          charity_slugs: state_updates.charity_slugs
+          charity_slug: state_updates.charity_slug
         });
       }
     });
@@ -45,16 +45,17 @@ export function handleChange(event) {
 }
 
 export function handleClick(event) {
-  if (this.state.charity_found) {
+  if (this.state.charity_was_found) {
     this.setState(
       {
         charity_selected: true,
         charity_details_displayed: this.state.charity_details_found,
-        show_list: false
+        show_list: false,
+        timestamp: "",
+        donations: []
       },
       () => {
         get_recent_donations(this.state.charity_ID).then(state_updates => {
-          console.log(state_updates);
           const date = new Date();
           const timestamp = date.toLocaleString();
           this.setState({
@@ -69,8 +70,4 @@ export function handleClick(event) {
 
 export function handleSubmit(event) {
   event.preventDefault();
-}
-
-function getTwoDigitNumber(number) {
-  return number < 10 ? "0" + number : "" + number;
 }

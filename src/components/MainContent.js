@@ -12,8 +12,9 @@ class MainContent extends Component {
     super(props);
     this.state = {
       charity_selected: false,
+      charity_was_found: false,
+      show_list: true,
       charity_ID: "",
-      charity_found: false,
       charity_details_found: {
         charity_logo_url: "",
         charity_website: "",
@@ -28,10 +29,9 @@ class MainContent extends Component {
         charity_name: "",
         charity_description: ""
       },
-      charity_slugs: [],
+      charity_slug: "",
       timestamp: "",
-      donations: [],
-      show_list: true
+      donations: []
     };
 
     this.handleChange = handleChange.bind(this);
@@ -47,7 +47,7 @@ class MainContent extends Component {
           handleClick={this.handleClick}
           handleSubmit={this.handleSubmit}
           charity_ID={this.state.charity_ID}
-          charity_slugs={this.state.charity_slugs}
+          charity_slug={this.state.charity_slug}
           charity_selected={this.state.charity_selected}
           show_list={this.state.show_list}
         />

@@ -18,8 +18,17 @@ const Donations = props => {
   return (
     <div className="donations">
       <h2>Recent Donations:</h2>
-      <p className="refresh_message">Last refreshed: {props.timestamp}</p>
-      <div>{donations}</div>
+      {props.donations.length === 0 ? (
+        <>
+          <h3 className="centred_text">Loading donations...</h3>
+          <div className="loader loader_50" />
+        </>
+      ) : (
+        <>
+          <p className="refresh_message">Last refreshed: {props.timestamp}</p>
+          <div>{donations}</div>
+        </>
+      )}
     </div>
   );
 };

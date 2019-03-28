@@ -7,23 +7,27 @@ const CharityDetails = props => (
     <h2>Charity Details:</h2>
     <div className="charity_details_column_wrapper">
       <div className="charity_details_column_left">
-        <p>
-          <a href="">
-            <img
-              src={props.charity_details_displayed.charity_logo_url}
-              className="charity_logo"
-            />
-          </a>
-        </p>
+        <a
+          href={props.charity_details_displayed.charity_website}
+          target="_blank"
+        >
+          <img
+            src={props.charity_details_displayed.charity_logo_url}
+            className="charity_logo"
+          />
+        </a>
       </div>
       <div className="charity_details_column_right">
         <h3>{props.charity_details_displayed.charity_name}</h3>
         <p>{props.charity_details_displayed.charity_description}</p>
-        <p>
+        <p className="bold">
           Reg. Charity Number: {props.charity_details_displayed.charity_number}
         </p>
-        <p>
-          <a href={props.charity_details_displayed.charity_website}>
+        <p className="bold">
+          <a
+            href={props.charity_details_displayed.charity_website}
+            target="_blank"
+          >
             {props.charity_details_displayed.charity_website}
           </a>
         </p>
@@ -39,8 +43,7 @@ CharityDetails.propTypes = {
     charity_number: PropTypes.string.isRequired,
     charity_name: PropTypes.string.isRequired,
     charity_description: PropTypes.string.isRequired
-  }).isRequired,
-  charity_selected: PropTypes.bool.isRequired
+  }).isRequired
 };
 
 export default hot(module)(CharityDetails);

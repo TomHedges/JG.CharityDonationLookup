@@ -64,7 +64,7 @@ function getDonation(
 const Donation = props => (
   <div className="donation_wrapper">
     <div className="donation_column_left">
-      <img className="unknown_avatar" src={props.donor_avatar_url} />
+      <img className="donor_avatar" src={props.donor_avatar_url} />
     </div>
     <div className="donation_column_right">
       <p className="donation_date">{convertDate(props.donation_date)}</p>

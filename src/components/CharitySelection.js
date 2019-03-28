@@ -3,16 +3,17 @@ import { hot } from "react-hot-loader";
 import PropTypes from "prop-types";
 
 const CharitySelection = props => {
-  const listItems = props.charity_slugs.map(slug => (
-    <span key={slug} onClick={props.handleClick} className="charity_result">
-      {slug}
-    </span>
-  ));
-
   const dropdown_class =
     props.show_list === true
       ? "dropdown_content_shown"
       : "dropdown_content_hidden";
+
+  const slug =
+    props.charity_slug !== "" ? (
+      <span onClick={props.handleClick} className="charity_result">
+        {props.charity_slug}
+      </span>
+    ) : null;
 
   return (
     <div className="charity_selection">
@@ -28,7 +29,7 @@ const CharitySelection = props => {
             value={props.charity_ID}
             onChange={props.handleChange}
           />
-          <div className={dropdown_class}>{listItems}</div>
+          <div className={dropdown_class}>{slug}</div>
         </div>
       </form>
     </div>
@@ -39,9 +40,8 @@ CharitySelection.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  charity_slugs: PropTypes.array.isRequired,
+  charity_slug: PropTypes.string.isRequired,
   charity_ID: PropTypes.string.isRequired,
-  charity_selected: PropTypes.bool.isRequired,
   show_list: PropTypes.bool.isRequired
 };
 
