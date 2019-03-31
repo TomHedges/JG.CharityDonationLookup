@@ -9,14 +9,14 @@ const CharitySelection = props => {
       : "dropdown_content_hidden";
 
   const slug =
-    props.charity_slug !== "" ? (
+    props.charity_slug !== "" && props.charity_slug !== null ? (
       <span onClick={props.handleClick} className="charity_result">
         {props.charity_slug}
       </span>
     ) : null;
 
   return (
-    <div className="charity_selection">
+    <div className="charity_selection" key="prevent_jest_error">
       <form onSubmit={props.handleSubmit}>
         <label htmlFor="charity_id">
           Please enter Charity ID and select charity from dropdown list:

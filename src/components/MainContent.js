@@ -3,9 +3,9 @@ import { hot } from "react-hot-loader";
 import CharitySelection from "./CharitySelection";
 import CharityDetails from "./CharityDetails";
 import Donations from "./Donations";
-import { handleChange } from "../scripts/user_interaction.js";
-import { handleClick } from "../scripts/user_interaction.js";
-import { handleSubmit } from "../scripts/user_interaction.js";
+import { handleChange } from "../scripts/event_handlers.js";
+import { handleClick } from "../scripts/event_handlers.js";
+import { handleSubmit } from "../scripts/event_handlers.js";
 
 class MainContent extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
-import { get_charity_details } from "./../scripts/data_access";
-import { get_recent_donations } from "./../scripts/data_access";
+import { get_charity_details } from "./data_access";
+import { get_recent_donations } from "./data_access";
 
 export function handleChange(event) {
   const value = event.target.value;
