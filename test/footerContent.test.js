@@ -23,3 +23,8 @@ describe("<FooterContent /> rendering", () => {
     expect(wrapper.find("p")).toHaveLength(1);
   });
 });
+
+describe("Snapshot should contain copyright statement and header text", () => {
+  const tree = renderer.create(wrapper).toJSON();
+  expect(tree).toMatchSnapshot();
+});

@@ -29,3 +29,8 @@ describe("<HeaderContent /> rendering", () => {
     expect(wrapper.find("h1")).toHaveLength(1);
   });
 });
+
+describe("Snapshot should contain logo and heading", () => {
+  const tree = renderer.create(wrapper).toJSON();
+  expect(tree).toMatchSnapshot();
+});

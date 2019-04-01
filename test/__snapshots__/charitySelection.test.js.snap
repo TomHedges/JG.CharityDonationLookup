@@ -20,7 +20,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
         id="charity_id"
         onChange={[Function]}
         type="text"
-        value="123"
+        value="98765"
       />
       <div
         className="dropdown_content_hidden"
@@ -57,7 +57,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
         id="charity_id"
         onChange={[Function]}
         type="text"
-        value="123"
+        value="98765"
       />
       <div
         className="dropdown_content_shown"
@@ -94,7 +94,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should not
         id="charity_id"
         onChange={[Function]}
         type="text"
-        value="123"
+        value="98765"
       />
       <div
         className="dropdown_content_hidden"

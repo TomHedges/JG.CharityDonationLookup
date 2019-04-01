@@ -1,6 +1,5 @@
 import CharitySelection from "../src/components/CharitySelection";
-import { handleSubmit } from "../src/scripts/event_handlers.js/index.js";
-import renderer from "react-test-renderer";
+import { handleSubmit } from "../src/scripts/event_handlers.js";
 
 /**
  * Initialize common properties to be passed
@@ -8,17 +7,14 @@ import renderer from "react-test-renderer";
  */
 
 const TEST_CHARITY_SLUG = "Tom's Great Charity (12345)";
+const TEST_CHARITY_ID = "98765";
 
 function createTestProps(props) {
   return {
-    handleChange: () => {
-      target: {
-        value: "15678";
-      }
-    },
+    handleChange: () => {},
     handleClick: () => {},
     handleSubmit: handleSubmit,
-    charity_ID: "123",
+    charity_ID: TEST_CHARITY_ID,
     charity_slug: TEST_CHARITY_SLUG,
     show_list: true,
     ...props
@@ -39,18 +35,6 @@ describe("<CharitySelection /> rendering", () => {
 });
 
 describe("<CharitySelection /> interactions", () => {
-  /*
-  test("Record change in input value when text is entered", () => {
-    //console.log(wrapper.find("input").props());
-    wrapper.find("input").simulate("change", {
-      target: { value: "15678" }
-    });
-    //wrapper = shallow(<CharitySelection {...props} charity_ID={"15678"} />);
-    //console.log(wrapper.find("input").props());
-    expect(wrapper.find("input").props().value).toEqual("15678");
-  });
-  */
-
   test("Should cancel form submission", () => {
     let prevented = false;
     wrapper.find("form").simulate("submit", {
@@ -77,14 +61,12 @@ describe("<CharitySelection /> display changes based on state", () => {
     expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
   });
 
-  /*
   test("Should not display charity_slug dropdown when message is null", () => {
     wrapper = shallow(<CharitySelection {...props} charity_slug={null} />);
     expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
   });
-  */
 
-  let tree = renderer;
+  let tree;
 
   test("Snapshot should contain charity_slug text in span, within div class 'dropdown_content_shown'", () => {
     tree = renderer.create(wrapper).toJSON();
