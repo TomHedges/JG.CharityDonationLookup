@@ -12,12 +12,14 @@ export function get_charity_details(charity_ID) {
     let state_updates = {};
 
     if (response.status === HTTP_RESULT_STATUS.SUCCESS) {
+      const charity_website =
+        response.data.websiteUrl !== "http://" ? response.data.websiteUrl : "";
       state_updates = {
         charity_was_found: true,
         charity_details_found: {
           charity_name: response.data.name,
           charity_logo_url: response.data.logoAbsoluteUrl,
-          charity_website: response.data.websiteUrl,
+          charity_website: charity_website,
           charity_number: response.data.registrationNumber,
           charity_description: response.data.description
         },

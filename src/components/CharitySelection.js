@@ -16,7 +16,7 @@ const CharitySelection = props => {
     ) : null;
 
   return (
-    <div className="charity_selection" key="prevent_jest_error">
+    <div className="charity_selection">
       <form onSubmit={props.handleSubmit}>
         <label htmlFor="charity_id">
           Please enter Charity ID and select charity from dropdown list:

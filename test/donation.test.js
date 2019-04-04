@@ -50,7 +50,7 @@ describe("<Donation /> rendering", () => {
   });
 });
 
-describe("Display with all props (GBP) should display image, name, date, comment, amount and GA amount", () => {
+describe("Display with all props (GBP) - image, name, date, comment, amount and GA amount", () => {
   it("Should contain a left column div", () => {
     expect(wrapper.find("div.donation_column_left")).toHaveLength(1);
   });

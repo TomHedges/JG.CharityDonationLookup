@@ -105,7 +105,7 @@ function getDonation(
  */
 
 const Donation = props => (
-  <div className="donation_wrapper" key="prevent_jest_error">
+  <div className="donation_wrapper">
     <div className="donation_column_left">
       <img className="donor_avatar" src={props.donor_avatar_url} />
     </div>

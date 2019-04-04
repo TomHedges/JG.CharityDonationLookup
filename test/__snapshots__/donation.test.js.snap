@@ -78,7 +78,7 @@ exports[`Display USD donation amount correctly Snapshot should display USD data 
 </div>
 `;
 
-exports[`Display with all props (GBP) should display image, name, date, comment, amount and GA amount Snapshot should display all data 1`] = `
+exports[`Display with all props (GBP) - image, name, date, comment, amount and GA amount Snapshot should display all data 1`] = `
 <div
   className="donation_wrapper"
 >

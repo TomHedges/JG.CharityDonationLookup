@@ -2,8 +2,7 @@ import CharitySelection from "../src/components/CharitySelection";
 import { handleSubmit } from "../src/scripts/event_handlers.js";
 
 /**
- * Initialize common properties to be passed
- * @param {*} props properies to be override
+ * Unit tests for the CharitySelection component
  */
 
 const TEST_CHARITY_SLUG = "Tom's Great Charity (12345)";

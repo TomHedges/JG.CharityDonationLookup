@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display content without description when this is blank Snapshot should display all charity details except the blank description 1`] = `
+<div
+  className="charity_details"
+>
+  <h2>
+    Charity Details:
+  </h2>
+  <div
+    className="charity_details_column_wrapper"
+  >
+    <div
+      className="charity_details_column_left"
+    >
+      <a
+        href="http://www.macmillan.org.uk"
+        target="_blank"
+      >
+        <img
+          className="charity_logo"
+          src="https://images.justgiving.com/image/4cf848f3-9ca5-4f54-9250-216c74d58eb7.png"
+        />
+      </a>
+    </div>
+    <div
+      className="charity_details_column_right"
+    >
+      <h3>
+        <a
+          href="http://www.macmillan.org.uk"
+          target="_blank"
+        >
+          Macmillan Cancer Support
+        </a>
+      </h3>
+      <p
+        className="bold"
+      >
+        Reg. Charity Number: 
+        261017
+      </p>
+      <p
+        className="bold"
+      >
+        <a
+          href="http://www.macmillan.org.uk"
+          target="_blank"
+        >
+          http://www.macmillan.org.uk
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Display content without links when the charity_website prop is blank Snapshot should display all charity details without links to charity website 1`] = `
+<div
+  className="charity_details"
+>
+  <h2>
+    Charity Details:
+  </h2>
+  <div
+    className="charity_details_column_wrapper"
+  >
+    <div
+      className="charity_details_column_left"
+    >
+      <img
+        className="charity_logo"
+        src="https://images.justgiving.com/image/4cf848f3-9ca5-4f54-9250-216c74d58eb7.png"
+      />
+    </div>
+    <div
+      className="charity_details_column_right"
+    >
+      <h3>
+        Macmillan Cancer Support
+      </h3>
+      <p>
+        We’re here to help everyone with cancer live life as fully as they can, providing physical, financial and emotional support. So whatever cancer throws your way, we’re right there with you.
+      </p>
+      <p
+        className="bold"
+      >
+        Reg. Charity Number: 
+        261017
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Display single column of name, description, charity number and website link when there is a blank logo URL Snapshot should display all charity details 1`] = `
+<div
+  className="charity_details"
+>
+  <h2>
+    Charity Details:
+  </h2>
+  <div
+    className="charity_details_column_wrapper"
+  >
+    <div
+      className=""
+    >
+      <h3>
+        <a
+          href="http://www.macmillan.org.uk"
+          target="_blank"
+        >
+          Macmillan Cancer Support
+        </a>
+      </h3>
+      <p>
+        We’re here to help everyone with cancer live life as fully as they can, providing physical, financial and emotional support. So whatever cancer throws your way, we’re right there with you.
+      </p>
+      <p
+        className="bold"
+      >
+        Reg. Charity Number: 
+        261017
+      </p>
+      <p
+        className="bold"
+      >
+        <a
+          href="http://www.macmillan.org.uk"
+          target="_blank"
+        >
+          http://www.macmillan.org.uk
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Display with all props - logo, name, description, charity number and website link Snapshot should display all charity details 1`] = `
+<div
+  className="charity_details"
+>
+  <h2>
+    Charity Details:
+  </h2>
+  <div
+    className="charity_details_column_wrapper"
+  >
+    <div
+      className="charity_details_column_left"
+    >
+      <a
+        href="http://www.macmillan.org.uk"
+        target="_blank"
+      >
+        <img
+          className="charity_logo"
+          src="https://images.justgiving.com/image/4cf848f3-9ca5-4f54-9250-216c74d58eb7.png"
+        />
+      </a>
+    </div>
+    <div
+      className="charity_details_column_right"
+    >
+      <h3>
+        <a
+          href="http://www.macmillan.org.uk"
+          target="_blank"
+        >
+          Macmillan Cancer Support
+        </a>
+      </h3>
+      <p>
+        We’re here to help everyone with cancer live life as fully as they can, providing physical, financial and emotional support. So whatever cancer throws your way, we’re right there with you.
+      </p>
+      <p
+        className="bold"
+      >
+        Reg. Charity Number: 
+        261017
+      </p>
+      <p
+        className="bold"
+      >
+        <a
+          href="http://www.macmillan.org.uk"
+          target="_blank"
+        >
+          http://www.macmillan.org.uk
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
