@@ -1,3 +1,8 @@
+/**
+ * FooterContent.js
+ * Contains copyright message and repeats page title from HeaderContent
+ */
+
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import PropTypes from "prop-types";

@@ -1,3 +1,8 @@
+/**
+ * HeaderContent.js
+ * Contains JG logo and page title
+ */
+
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import PropTypes from "prop-types";

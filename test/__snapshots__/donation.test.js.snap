@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display GBP donation amount correctly without Gift Aid Snapshot should display donation without Gift Aid 1`] = `
+<div
+  className="donation_wrapper"
+>
+  <div
+    className="donation_column_left"
+  >
+    <img
+      className="donor_avatar"
+      src="https://images.justgiving.com/image/f1e9879a-dace-443a-a453-d0636e66a348.jpg?template=profilesummary"
+    />
+  </div>
+  <div
+    className="donation_column_right"
+  >
+    <p
+      className="donation_date"
+    >
+      01/04/2019
+    </p>
+    <p
+      className="donor_name"
+    >
+      Tom Hedges
+    </p>
+    <p
+      className="donor_comment"
+    >
+      Good luck!
+    </p>
+    <p
+      className="donation_amount"
+    >
+      £10.00
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Display USD donation amount correctly Snapshot should display USD data 1`] = `
+<div
+  className="donation_wrapper"
+>
+  <div
+    className="donation_column_left"
+  >
+    <img
+      className="donor_avatar"
+      src="https://images.justgiving.com/image/f1e9879a-dace-443a-a453-d0636e66a348.jpg?template=profilesummary"
+    />
+  </div>
+  <div
+    className="donation_column_right"
+  >
+    <p
+      className="donation_date"
+    >
+      01/04/2019
+    </p>
+    <p
+      className="donor_name"
+    >
+      Tom Hedges
+    </p>
+    <p
+      className="donor_comment"
+    >
+      Good luck!
+    </p>
+    <p
+      className="donation_amount"
+    >
+      $15.00
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Display with all props (GBP) should display image, name, date, comment, amount and GA amount Snapshot should display all data 1`] = `
+<div
+  className="donation_wrapper"
+>
+  <div
+    className="donation_column_left"
+  >
+    <img
+      className="donor_avatar"
+      src="https://images.justgiving.com/image/f1e9879a-dace-443a-a453-d0636e66a348.jpg?template=profilesummary"
+    />
+  </div>
+  <div
+    className="donation_column_right"
+  >
+    <p
+      className="donation_date"
+    >
+      01/04/2019
+    </p>
+    <p
+      className="donor_name"
+    >
+      Tom Hedges
+    </p>
+    <p
+      className="donor_comment"
+    >
+      Good luck!
+    </p>
+    <p
+      className="donation_amount"
+    >
+      £10.00
+      <span
+        className="tax_reclaim"
+      >
+        + 
+        £
+        2.50
+         Gift Aid
+      </span>
+    </p>
+  </div>
+</div>
+`;

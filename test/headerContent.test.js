@@ -1,9 +1,9 @@
 import HeaderContent from "../src/components/HeaderContent";
 
 /**
- * Initialize common properties to be passed
- * @param {*} props properies to be override
+ * Unit tests for the HeaderContent component
  */
+
 function createTestProps(props) {
   return {
     heading: "JG Donations Report",

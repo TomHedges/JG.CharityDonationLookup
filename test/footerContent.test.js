@@ -1,9 +1,9 @@
 import FooterContent from "../src/components/FooterContent";
 
 /**
- * Initialize common properties to be passed
- * @param {*} props properies to be override
+ * Unit tests for the FooterContent component
  */
+
 function createTestProps(props) {
   return {
     heading: "JG Donations Report",
