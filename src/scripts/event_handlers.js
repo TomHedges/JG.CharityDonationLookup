@@ -52,7 +52,7 @@ export function handleClick(event) {
         charity_details_displayed: this.state.charity_details_found,
         show_list: false,
         timestamp: "",
-        donations: []
+        donations: null
       },
       () => {
         get_recent_donations(this.state.charity_ID).then(state_updates => {

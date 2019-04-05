@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { hot } from "react-hot-loader";
-import PropTypes from "prop-types";
-
 /**
  * CharityDetails.js
  * Summary details of selected charity. Displays name, logo, description, website and charity number
  */
+
+import React, { Component } from "react";
+import { hot } from "react-hot-loader";
+import PropTypes from "prop-types";
 
 /**
  * function getLinkWrappedContent(link_URL: String, children: Element) {

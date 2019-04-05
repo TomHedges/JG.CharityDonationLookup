@@ -1,9 +1,5 @@
 import MainContent from "../src/components/MainContent";
 
-/**
- * Initialize common properties to be passed
- * @param {*} props properies to be override
- */
 function createTestProps(props) {
   return {
     charity_selected: false,

@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading - display heading and loading spinner Snapshot should display heading, message and loading spinner 1`] = `
+<div
+  className="donations"
+>
+  <h2>
+    Recent Donations:
+  </h2>
+  <p
+    className="centred_text bold"
+  >
+    Loading donations...
+  </p>
+  <div
+    className="loader loader_50"
+  />
+</div>
+`;
+
+exports[`No results returned - display heading, refresh timestamp, and message 'No donations found.' Snapshot should display heading, timestamp and 'no donations' message 1`] = `
+<div
+  className="donations"
+>
+  <h2>
+    Recent Donations:
+  </h2>
+  <p
+    className="refresh_message"
+  >
+    Last refreshed: 
+    04/04/2019, 19:42:15
+  </p>
+  <p
+    className="refresh_link"
+    onClick={[MockFunction]}
+  >
+    Refresh donation list
+  </p>
+  <div>
+    <p
+      className="centred_text bold"
+    >
+      No donations found.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Results returned - display heading, refresh timestamp, and donations Snapshot should display heading, timestamp and donations 1`] = `
+<div
+  className="donations"
+>
+  <h2>
+    Recent Donations:
+  </h2>
+  <p
+    className="refresh_message"
+  >
+    Last refreshed: 
+    04/04/2019, 19:42:15
+  </p>
+  <p
+    className="refresh_link"
+    onClick={[MockFunction]}
+  >
+    Refresh donation list
+  </p>
+  <div>
+    <div
+      className="donation_wrapper"
+    >
+      <div
+        className="donation_column_left"
+      >
+        <img
+          className="donor_avatar"
+          src="https://images.justgiving.com/image/f1e9879a-dace-443a-a453-d0636e66a348.jpg?template=profilesummary"
+        />
+      </div>
+      <div
+        className="donation_column_right"
+      >
+        <p
+          className="donation_date"
+        >
+          01/04/2019
+        </p>
+        <p
+          className="donor_name"
+        >
+          Tom Hedges
+        </p>
+        <p
+          className="donor_comment"
+        >
+          Good luck!
+        </p>
+        <p
+          className="donation_amount"
+        >
+          £10.00
+          <span
+            className="tax_reclaim"
+          >
+            + 
+            £
+            2.50
+             Gift Aid
+          </span>
+        </p>
+      </div>
+    </div>
+    <div
+      className="donation_wrapper"
+    >
+      <div
+        className="donation_column_left"
+      >
+        <img
+          className="donor_avatar"
+          src="https://images.justgiving.com/image/f1e9879a-dace-443a-a453-d0636e66a348.jpg?template=profilesummary"
+        />
+      </div>
+      <div
+        className="donation_column_right"
+      >
+        <p
+          className="donation_date"
+        >
+          01/04/2019
+        </p>
+        <p
+          className="donor_name"
+        >
+          Tom Hedges
+        </p>
+        <p
+          className="donor_comment"
+        >
+          Good luck!
+        </p>
+        <p
+          className="donation_amount"
+        >
+          £10.00
+          <span
+            className="tax_reclaim"
+          >
+            + 
+            £
+            2.50
+             Gift Aid
+          </span>
+        </p>
+      </div>
+    </div>
+    <div
+      className="donation_wrapper"
+    >
+      <div
+        className="donation_column_left"
+      >
+        <img
+          className="donor_avatar"
+          src="https://images.justgiving.com/image/f1e9879a-dace-443a-a453-d0636e66a348.jpg?template=profilesummary"
+        />
+      </div>
+      <div
+        className="donation_column_right"
+      >
+        <p
+          className="donation_date"
+        >
+          01/04/2019
+        </p>
+        <p
+          className="donor_name"
+        >
+          Tom Hedges
+        </p>
+        <p
+          className="donor_comment"
+        >
+          Good luck!
+        </p>
+        <p
+          className="donation_amount"
+        >
+          £10.00
+          <span
+            className="tax_reclaim"
+          >
+            + 
+            £
+            2.50
+             Gift Aid
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

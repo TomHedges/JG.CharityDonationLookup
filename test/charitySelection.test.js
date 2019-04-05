@@ -7,11 +7,12 @@ import { handleSubmit } from "../src/scripts/event_handlers.js";
 
 const TEST_CHARITY_SLUG = "Tom's Great Charity (12345)";
 const TEST_CHARITY_ID = "98765";
+const HANDLE_CLICK = jest.fn();
 
 function createTestProps(props) {
   return {
     handleChange: () => {},
-    handleClick: () => {},
+    handleClick: HANDLE_CLICK,
     handleSubmit: handleSubmit,
     charity_ID: TEST_CHARITY_ID,
     charity_slug: TEST_CHARITY_SLUG,
@@ -20,21 +21,53 @@ function createTestProps(props) {
   };
 }
 
-let wrapper, props;
+let wrapper, tree;
+const props = createTestProps();
 
-beforeEach(() => {
-  props = createTestProps();
-  wrapper = shallow(<CharitySelection {...props} />);
-});
-
-describe("<CharitySelection /> rendering", () => {
-  test("Should render <CharitySelection /> component", () => {
+describe("<CharitySelection /> display changes based on state", () => {
+  it("Should render <CharitySelection /> component", () => {
+    wrapper = shallow(<CharitySelection {...props} />);
     expect(wrapper.exists()).toBe(true);
+  });
+
+  it("Should display charity_slug text in a span", () => {
+    wrapper = shallow(<CharitySelection {...props} />);
+    expect(
+      wrapper.find("div.dropdown_content_shown > span.charity_result")
+    ).toHaveLength(1);
+  });
+
+  it("Should not display charity_slug text when show_list is false", () => {
+    wrapper = shallow(<CharitySelection {...props} show_list={false} />);
+    expect(wrapper.find("div.dropdown_content_shown")).toHaveLength(0);
+  });
+
+  it("Should not display charity_slug dropdown when message is blank", () => {
+    wrapper = shallow(<CharitySelection {...props} charity_slug={""} />);
+    expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
+  });
+
+  it("Should not display charity_slug dropdown when message is null", () => {
+    wrapper = shallow(<CharitySelection {...props} charity_slug={null} />);
+    expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
+  });
+
+  it("Snapshot should contain charity_slug text in span, within div class 'dropdown_content_shown'", () => {
+    wrapper = shallow(<CharitySelection {...props} />);
+    tree = renderer.create(wrapper).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("Snapshot should contain charity_slug text in span, within div class 'dropdown_content_hidden'", () => {
+    wrapper = shallow(<CharitySelection {...props} show_list={false} />);
+    tree = renderer.create(wrapper).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
 
 describe("<CharitySelection /> interactions", () => {
-  test("Should cancel form submission", () => {
+  it("Should cancel form submission", () => {
+    wrapper = shallow(<CharitySelection {...props} />);
     let prevented = false;
     wrapper.find("form").simulate("submit", {
       preventDefault: () => {
@@ -43,44 +76,12 @@ describe("<CharitySelection /> interactions", () => {
     });
     expect(prevented).toBe(true);
   });
-});
 
-describe("<CharitySelection /> display changes based on state", () => {
-  test("Should display charity_slug text", () => {
-    expect(wrapper.find("div.dropdown_content_shown")).toHaveLength(1);
-  });
-
-  test("Should not display charity_slug text when show_list is false", () => {
-    wrapper = shallow(<CharitySelection {...props} show_list={false} />);
-    expect(wrapper.find("div.dropdown_content_shown")).toHaveLength(0);
-  });
-
-  test("Should not display charity_slug dropdown when message is blank", () => {
-    wrapper = shallow(<CharitySelection {...props} charity_slug={""} />);
-    expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
-  });
-
-  test("Should not display charity_slug dropdown when message is null", () => {
-    wrapper = shallow(<CharitySelection {...props} charity_slug={null} />);
-    expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
-  });
-
-  let tree;
-
-  test("Snapshot should contain charity_slug text in span, within div class 'dropdown_content_shown'", () => {
-    tree = renderer.create(wrapper).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  test("Snapshot should contain charity_slug text in span, within div class 'dropdown_content_hidden'", () => {
-    wrapper = shallow(<CharitySelection {...props} show_list={false} />);
-    tree = renderer.create(wrapper).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  test("Snapshot should not contain charity_slug text in span, within div class 'dropdown_content_hidden'", () => {
-    wrapper = shallow(<CharitySelection {...props} show_list={false} />);
-    tree = renderer.create(wrapper).toJSON();
-    expect(tree).toMatchSnapshot();
+  it("Should call handleClick when span is clicked", () => {
+    wrapper = shallow(<CharitySelection {...props} />);
+    const span = wrapper
+      .find("div.dropdown_content_shown > span.charity_result")
+      .simulate("click");
+    expect(HANDLE_CLICK.mock.calls.length).toEqual(1);
   });
 });

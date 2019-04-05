@@ -1,7 +1,19 @@
+/**
+ * CharitySelection.js
+ * Form to select charity by ID number. Contains only one labelled text input, plus a conditionally
+ * visible span containing the name/reg. number of the charity. AJAX lookup performed as input value changes.
+ */
+
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import PropTypes from "prop-types";
 
+/**
+ * const CharitySelection
+ * Returns the labelled text box, along with a div-enclosed-span containing the AJAX lookup results. These are
+ * styled to look like a dropdown list (will only contain one result at a time). The text shown in the "dropdown"
+ * may be a search result, loading message or error message.
+ */
 const CharitySelection = props => {
   const dropdown_class =
     props.show_list === true

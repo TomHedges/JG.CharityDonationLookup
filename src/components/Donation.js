@@ -68,9 +68,8 @@ function getTaxReclaim(donation_tax_reclaim, donation_currency) {
 }
 
 //
-//TODO - Unnecessary inputs here - see comment at top
+//TODO - Unnecessary inputs in function below - see comment at top
 //
-
 /**
  * function getDonation(donation_amount: Number, donation_currency: Number,
  *                      donation_amount_local: Number, donation_currency_local: Number,)
@@ -103,7 +102,6 @@ function getDonation(
  *   - Donor avatar (left hand column)
  *   - Donation details - donor name, comment, amount and Gift Aid amount (right hand block)
  */
-
 const Donation = props => (
   <div className="donation_wrapper">
     <div className="donation_column_left">

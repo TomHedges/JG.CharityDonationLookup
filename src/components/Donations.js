@@ -1,40 +1,53 @@
+/**
+ * Donations.js
+ * Display wrapper for a collection of donations - includes heading, loader spinner and the collection itself
+ */
+
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import PropTypes from "prop-types";
 import Donation from "./Donation";
 
-//class Donations extends Component {
-//  constructor(props) {
-//    super(props);
-//  }
-
-//  render() {
-
+/**
+ * const Donations
+ * Returns a heading and one of:
+ *  - loading spinner/message
+ *  - list of donations (including timestamp and link to refresh)
+ *  - message that there are no donations to display (including timestamp and link to refresh)
+ */
 const Donations = props => {
-  const donations = props.donations.map((donation, index) => (
-    <Donation key={index} {...donation} />
-  ));
+  const donations =
+    props.donations !== null && props.donations.length > 0 ? (
+      props.donations.map((donation, index) => (
+        <Donation key={index} {...donation} />
+      ))
+    ) : (
+      <p className="centred_text bold">No donations found.</p>
+    );
 
   return (
     <div className="donations">
       <h2>Recent Donations:</h2>
-      {props.donations.length === 0 ? (
+      {props.donations === null ? (
         <>
-          <h3 className="centred_text">Loading donations...</h3>
+          <p className="centred_text bold">Loading donations...</p>
           <div className="loader loader_50" />
         </>
       ) : (
         <>
           <p className="refresh_message">Last refreshed: {props.timestamp}</p>
+          <p className="refresh_link" onClick={props.handleClick}>
+            Refresh donation list
+          </p>
           <div>{donations}</div>
         </>
       )}
     </div>
   );
 };
-//}
 
 Donations.propTypes = {
+  handleClick: PropTypes.func.isRequired,
   timestamp: PropTypes.string.isRequired,
   donations: PropTypes.arrayOf(
     PropTypes.shape({
@@ -48,7 +61,7 @@ Donations.propTypes = {
       donation_amount_local: PropTypes.number.isRequired,
       donor_avatar_url: PropTypes.string.isRequired
     })
-  ).isRequired
+  )
 };
 
 export default hot(module)(Donations);

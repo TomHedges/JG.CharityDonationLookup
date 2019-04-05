@@ -31,7 +31,7 @@ class MainContent extends Component {
       },
       charity_slug: "",
       timestamp: "",
-      donations: []
+      donations: null
     };
 
     this.handleChange = handleChange.bind(this);
@@ -60,6 +60,7 @@ class MainContent extends Component {
             <Donations
               donations={this.state.donations}
               timestamp={this.state.timestamp}
+              handleClick={this.handleClick}
             />
           </>
         ) : null}

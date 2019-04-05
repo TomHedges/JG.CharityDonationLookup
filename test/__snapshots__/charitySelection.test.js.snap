@@ -27,7 +27,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
       >
         <span
           className="charity_result"
-          onClick={[Function]}
+          onClick={[MockFunction]}
         >
           Tom's Great Charity (12345)
         </span>
@@ -64,44 +64,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
       >
         <span
           className="charity_result"
-          onClick={[Function]}
-        >
-          Tom's Great Charity (12345)
-        </span>
-      </div>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`<CharitySelection /> display changes based on state Snapshot should not contain charity_slug text in span, within div class 'dropdown_content_hidden' 1`] = `
-<div
-  className="charity_selection"
->
-  <form
-    onSubmit={[Function]}
-  >
-    <label
-      htmlFor="charity_id"
-    >
-      Please enter Charity ID and select charity from dropdown list:
-    </label>
-    <div
-      className="dropdown_wrapper"
-    >
-      <input
-        className="charity_id_selector"
-        id="charity_id"
-        onChange={[Function]}
-        type="text"
-        value="98765"
-      />
-      <div
-        className="dropdown_content_hidden"
-      >
-        <span
-          className="charity_result"
-          onClick={[Function]}
+          onClick={[MockFunction]}
         >
           Tom's Great Charity (12345)
         </span>
