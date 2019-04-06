@@ -30,12 +30,7 @@ exports[`No results returned - display heading, refresh timestamp, and message '
   >
     Last refreshed: 
     04/04/2019, 19:42:15
-  </p>
-  <p
-    className="refresh_link"
-    onClick={[MockFunction]}
-  >
-    Refresh donation list
+     (Refreshes every 10 seconds)
   </p>
   <div>
     <p
@@ -59,12 +54,7 @@ exports[`Results returned - display heading, refresh timestamp, and donations Sn
   >
     Last refreshed: 
     04/04/2019, 19:42:15
-  </p>
-  <p
-    className="refresh_link"
-    onClick={[MockFunction]}
-  >
-    Refresh donation list
+     (Refreshes every 10 seconds)
   </p>
   <div>
     <div

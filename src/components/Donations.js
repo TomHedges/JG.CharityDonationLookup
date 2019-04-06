@@ -35,9 +35,8 @@ const Donations = props => {
         </>
       ) : (
         <>
-          <p className="refresh_message">Last refreshed: {props.timestamp}</p>
-          <p className="refresh_link" onClick={props.handleClick}>
-            Refresh donation list
+          <p className="refresh_message">
+            Last refreshed: {props.timestamp} (Refreshes every 10 seconds)
           </p>
           <div>{donations}</div>
         </>

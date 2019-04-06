@@ -1,6 +1,8 @@
 import { get_charity_details } from "./data_access";
 import { get_recent_donations } from "./data_access";
 
+let timer;
+
 export function handleChange(event) {
   const value = event.target.value;
   const blank_charity_details = {
@@ -45,29 +47,43 @@ export function handleChange(event) {
 }
 
 export function handleClick(event) {
-  if (this.state.charity_was_found) {
-    this.setState(
-      {
-        charity_selected: true,
-        charity_details_displayed: this.state.charity_details_found,
-        show_list: false,
-        timestamp: "",
-        donations: null
-      },
-      () => {
-        get_recent_donations(this.state.charity_ID).then(state_updates => {
-          const date = new Date();
-          const timestamp = date.toLocaleString();
-          this.setState({
-            timestamp: timestamp,
-            donations: state_updates.donations
-          });
-        });
-      }
-    );
+  if (event.target.id === "charity_result") {
+    clearTimeout(timer);
+    if (this.state.charity_was_found) {
+      this.setState(
+        {
+          charity_selected: true,
+          charity_details_displayed: this.state.charity_details_found,
+          show_list: false,
+          timestamp: "",
+          donations: null
+        },
+        () => {
+          update_donations_list(this);
+        }
+      );
+    }
   }
 }
 
 export function handleSubmit(event) {
   event.preventDefault();
+}
+
+function update_donations_list(context) {
+  get_recent_donations(context.state.charity_ID).then(state_updates => {
+    const date = new Date();
+    const timestamp = date.toLocaleString();
+    context.setState(
+      {
+        timestamp: timestamp,
+        donations: state_updates.donations
+      },
+      () => {
+        timer = setTimeout(() => {
+          update_donations_list(context);
+        }, 10000);
+      }
+    );
+  });
 }

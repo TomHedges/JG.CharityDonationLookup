@@ -22,7 +22,11 @@ const CharitySelection = props => {
 
   const slug =
     props.charity_slug !== "" && props.charity_slug !== null ? (
-      <span onClick={props.handleClick} className="charity_result">
+      <span
+        id="charity_result"
+        onClick={props.handleClick}
+        className="charity_result"
+      >
         {props.charity_slug}
       </span>
     ) : null;

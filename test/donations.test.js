@@ -6,7 +6,8 @@ import Donation from "../src/components/Donation";
  */
 
 const TIMESTAMP = "04/04/2019, 19:42:15";
-const FORMATTED_TIMESTAMP = "Last refreshed: " + TIMESTAMP;
+const FORMATTED_TIMESTAMP =
+  "Last refreshed: " + TIMESTAMP + " (Refreshes every 10 seconds)";
 const HANDLE_CLICK = jest.fn();
 
 const DONOR_NAME = "Tom Hedges";
@@ -145,6 +146,7 @@ describe("Results returned - display heading, refresh timestamp, and donations",
     );
   });
 
+  /*
   it("Should display a p.refresh_link tag with the refresh link", () => {
     props = createTestProps_DonationsReceived();
     wrapper = shallow(<Donations {...props} />);
@@ -152,13 +154,10 @@ describe("Results returned - display heading, refresh timestamp, and donations",
       "Refresh donation list"
     );
   });
+  */
 
   it("Should contain the same number of donations as there are elements in the 'donations' array prop", () => {
     props = createTestProps_DonationsReceived();
-
-    //wrapper = shallow(<Donations {...props} />);
-    //expect(wrapper.find("div.donation_wrapper")).toHaveLength(DONATIONS.length);
-
     const testInstance = renderer.create(<Donations {...props} />).root;
     expect(testInstance.findAllByType(Donation)).toHaveLength(DONATIONS.length);
   });
@@ -206,6 +205,7 @@ describe("No results returned - display heading, refresh timestamp, and message 
   });
 });
 
+/*
 describe("<Donations /> interactions", () => {
   it("Refresh link click should trigger onClick", () => {
     wrapper = shallow(<Donations {...props} />);
@@ -213,3 +213,4 @@ describe("<Donations /> interactions", () => {
     expect(HANDLE_CLICK.mock.calls.length).toEqual(1);
   });
 });
+*/
