@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `null`;
+exports[`HeaderContent with heading and logo Should should display heading and logo 1`] = `
+<div
+  className="header_content side_pad"
+>
+  <img
+    className="jg_logo"
+    src={[Function]}
+  />
+  <h1>
+    JG Donations Report
+  </h1>
+</div>
+`;

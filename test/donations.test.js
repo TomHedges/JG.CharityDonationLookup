@@ -1,5 +1,4 @@
 import Donations from "../src/components/Donations";
-import Donation from "../src/components/Donation";
 
 /**
  * Unit tests for the Donations component
@@ -166,8 +165,11 @@ describe("Results returned - display heading, refresh timestamp, and donations",
 
   it("Should contain the same number of donations as there are elements in the 'donations' array prop", () => {
     props = createTestProps_DonationsReceived();
-    const testInstance = renderer.create(<Donations {...props} />).root;
-    expect(testInstance.findAllByType(Donation)).toHaveLength(DONATIONS.length);
+    //const testInstance = renderer.create(<Donations {...props} />).root;
+    //expect(testInstance.findAllByType(Donation)).toHaveLength(DONATIONS.length);
+
+    wrapper = shallow(<Donations {...props} />);
+    expect(wrapper.find("Donation")).toHaveLength(DONATIONS.length);
   });
 
   it("Snapshot should display heading, timestamp and donations", () => {
@@ -212,13 +214,3 @@ describe("No results returned - display heading, refresh timestamp, and message 
     expect(tree).toMatchSnapshot();
   });
 });
-
-/*
-describe("<Donations /> interactions", () => {
-  it("Refresh link click should trigger onClick", () => {
-    wrapper = shallow(<Donations {...props} />);
-    const p = wrapper.find("p.refresh_link").simulate("click");
-    expect(HANDLE_CLICK.mock.calls.length).toEqual(1);
-  });
-});
-*/

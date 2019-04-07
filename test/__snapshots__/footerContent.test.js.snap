@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `null`;
+exports[`FooterContent should contain copyright assertion and header text Snapshot should display copyright assertion and header text 1`] = `
+<div
+  className="footer_content side_pad"
+>
+  <p>
+    © Tom Hedges 2019 - 
+    JG Donations Report
+  </p>
+</div>
+`;

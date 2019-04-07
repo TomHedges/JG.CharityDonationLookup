@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainContent /> displays CharitySelection, CharityDetails and Donations when charity is selected Snapshot should contain CharitySelection, CharityDetails and Donations 1`] = `
+<div
+  className="main_content side_pad"
+>
+  <div
+    className="charity_selection"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="charity_id"
+      >
+        Please enter Charity ID and select charity from dropdown list:
+      </label>
+      <div
+        className="dropdown_wrapper"
+      >
+        <input
+          className="charity_id_selector"
+          id="charity_id"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+        <div
+          className="dropdown_content_shown"
+        />
+      </div>
+    </form>
+  </div>
+  <div
+    className="charity_details"
+  >
+    <h2>
+      Charity Details:
+    </h2>
+    <div
+      className="charity_details_column_wrapper"
+    >
+      <div
+        className=""
+      >
+        <h3>
+          
+        </h3>
+        <p
+          className="bold"
+        >
+          Reg. Charity Number: 
+          
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="donations"
+  >
+    <h2>
+      Recent Donations:
+    </h2>
+    <p
+      className="centred_text bold"
+    >
+      Loading donations...
+    </p>
+    <div
+      className="loader loader_50"
+    />
+  </div>
+</div>
+`;
+
+exports[`<MainContent /> displays only CharitySelection content on inital load Snapshot contains only CharitySelection content 1`] = `
+<div
+  className="main_content side_pad"
+>
+  <div
+    className="charity_selection"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="charity_id"
+      >
+        Please enter Charity ID and select charity from dropdown list:
+      </label>
+      <div
+        className="dropdown_wrapper"
+      >
+        <input
+          className="charity_id_selector"
+          id="charity_id"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+        <div
+          className="dropdown_content_shown"
+        />
+      </div>
+    </form>
+  </div>
+</div>
+`;

@@ -151,7 +151,7 @@ describe("Display with all props (GBP) - image, name, date, comment, amount and 
     ).toEqual(DONATION_TAX_RECLAIM_CONVERTED);
   });
 
-  test("Snapshot should display all data", () => {
+  it("Snapshot should display all data", () => {
     tree = renderer.create(wrapper).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -188,7 +188,7 @@ describe("Display GBP donation amount correctly without Gift Aid", () => {
     ).toHaveLength(0);
   });
 
-  test("Snapshot should display donation without Gift Aid", () => {
+  it("Snapshot should display donation without Gift Aid", () => {
     wrapper = shallow(
       <Donation {...props} donation_tax_reclaim={NO_TAX_RECLAIM} />
     );
@@ -243,7 +243,7 @@ describe("Display USD donation amount correctly", () => {
     ).toHaveLength(0);
   });
 
-  test("Snapshot should display USD data", () => {
+  it("Snapshot should display USD data", () => {
     wrapper = shallow(
       <Donation
         {...props}
