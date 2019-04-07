@@ -32,8 +32,6 @@ export function handleChange(event) {
 
     get_charity_details(value).then(state_updates => {
       if (
-        //state_updates.charity_was_found === true &&
-        //this.state.charity_ID !== "" &&
         this.state.charity_ID_searched === state_updates.charity_ID_searched
       ) {
         this.setState({
@@ -47,6 +45,7 @@ export function handleChange(event) {
 }
 
 export function handleClick(event) {
+  console.log("handleClick called!");
   if (event.target.id === "charity_result") {
     clearTimeout(timer);
     if (this.state.charity_was_found) {
@@ -74,10 +73,14 @@ function update_donations_list(context) {
   get_recent_donations(context.state.charity_ID).then(state_updates => {
     const date = new Date();
     const timestamp = date.toLocaleString();
+    const donations = add_latest_donations(
+      context.state.donations,
+      state_updates.donations
+    );
     context.setState(
       {
         timestamp: timestamp,
-        donations: state_updates.donations
+        donations: donations
       },
       () => {
         timer = setTimeout(() => {
@@ -86,4 +89,29 @@ function update_donations_list(context) {
       }
     );
   });
+}
+
+function add_latest_donations(current_donations, new_donations) {
+  let combined_donations = null;
+
+  if (current_donations === null) {
+    combined_donations = new_donations;
+    console.log(
+      "current dons are null... Length: " + combined_donations.length
+    );
+  } else {
+    combined_donations = current_donations;
+    console.log("current dons have length: " + combined_donations.length);
+    var numberToAdd = new_donations.length;
+    for (var i = 0; i < new_donations.length - 1; i++) {
+      if (current_donations[0].donation_key === new_donations[i].donation_key) {
+        numberToAdd = i;
+      }
+    }
+    for (var i = 0; i < numberToAdd; i++) {
+      combined_donations.unshift(new_donations[i]);
+    }
+  }
+
+  return combined_donations;
 }

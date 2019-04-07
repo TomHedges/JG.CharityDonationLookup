@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CharitySelection /> display changes based on state Snapshot should contain charity_slug text in span, within div class 'dropdown_content_hidden' 1`] = `
+exports[`<CharitySelection /> display changes based on state Snapshot should contain charity_slug text in span, but set class to 'dropdown_content_hidden' based on show_list prop 1`] = `
 <div
   className="charity_selection"
 >
@@ -18,7 +18,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
       <input
         className="charity_id_selector"
         id="charity_id"
-        onChange={[Function]}
+        onChange={[MockFunction]}
         type="text"
         value="98765"
       />
@@ -27,6 +27,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
       >
         <span
           className="charity_result"
+          id="charity_result"
           onClick={[MockFunction]}
         >
           Tom's Great Charity (12345)
@@ -55,7 +56,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
       <input
         className="charity_id_selector"
         id="charity_id"
-        onChange={[Function]}
+        onChange={[MockFunction]}
         type="text"
         value="98765"
       />
@@ -64,6 +65,7 @@ exports[`<CharitySelection /> display changes based on state Snapshot should con
       >
         <span
           className="charity_result"
+          id="charity_result"
           onClick={[MockFunction]}
         >
           Tom's Great Charity (12345)

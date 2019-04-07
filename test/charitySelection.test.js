@@ -8,10 +8,11 @@ import { handleSubmit } from "../src/scripts/event_handlers.js";
 const TEST_CHARITY_SLUG = "Tom's Great Charity (12345)";
 const TEST_CHARITY_ID = "98765";
 const HANDLE_CLICK = jest.fn();
+const HANDLE_CHANGE = jest.fn();
 
 function createTestProps(props) {
   return {
-    handleChange: () => {},
+    handleChange: HANDLE_CHANGE,
     handleClick: HANDLE_CLICK,
     handleSubmit: handleSubmit,
     charity_ID: TEST_CHARITY_ID,
@@ -47,18 +48,13 @@ describe("<CharitySelection /> display changes based on state", () => {
     expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
   });
 
-  it("Should not display charity_slug dropdown when message is null", () => {
-    wrapper = shallow(<CharitySelection {...props} charity_slug={null} />);
-    expect(wrapper.find("div.dropdown_content_shown span")).toHaveLength(0);
-  });
-
   it("Snapshot should contain charity_slug text in span, within div class 'dropdown_content_shown'", () => {
     wrapper = shallow(<CharitySelection {...props} />);
     tree = renderer.create(wrapper).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it("Snapshot should contain charity_slug text in span, within div class 'dropdown_content_hidden'", () => {
+  it("Snapshot should contain charity_slug text in span, but set class to 'dropdown_content_hidden' based on show_list prop", () => {
     wrapper = shallow(<CharitySelection {...props} show_list={false} />);
     tree = renderer.create(wrapper).toJSON();
     expect(tree).toMatchSnapshot();
@@ -77,11 +73,21 @@ describe("<CharitySelection /> interactions", () => {
     expect(prevented).toBe(true);
   });
 
+  it("Should call handleChange when input changes", () => {
+    wrapper = shallow(<CharitySelection {...props} />);
+    wrapper.find("input#charity_id").simulate("change", {
+      target: { value: "1" }
+    });
+    expect(HANDLE_CHANGE).toHaveBeenCalledTimes(1);
+  });
+
   it("Should call handleClick when span is clicked", () => {
     wrapper = shallow(<CharitySelection {...props} />);
-    const span = wrapper
+    wrapper
       .find("div.dropdown_content_shown > span.charity_result")
-      .simulate("click");
-    expect(HANDLE_CLICK.mock.calls.length).toEqual(1);
+      .simulate("click", {
+        target: {}
+      });
+    expect(HANDLE_CLICK).toHaveBeenCalledTimes(1);
   });
 });

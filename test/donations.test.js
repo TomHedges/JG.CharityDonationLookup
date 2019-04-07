@@ -11,7 +11,10 @@ const FORMATTED_TIMESTAMP =
 const HANDLE_CLICK = jest.fn();
 
 const DONOR_NAME = "Tom Hedges";
-const DONATION_DATE = "/Date(1554076800000+0000)/";
+const DONATION_DATE_1 = "/Date(1554076800001+0000)/";
+const DONATION_DATE_2 = "/Date(1554076800002+0000)/";
+const DONATION_DATE_3 = "/Date(1554076800003+0000)/";
+const DONATION_DATE_4 = "/Date(1554076800004+0000)/";
 const DONOR_COMMENT = "Good luck!";
 const DONATION_AMOUNT = 10;
 const DONATION_CURRENCY = "GBP";
@@ -24,36 +27,51 @@ const DONOR_AVATAR_URL =
 const DONATIONS = [
   {
     donor_name: DONOR_NAME,
-    donation_date: DONATION_DATE,
+    donation_date: DONATION_DATE_1,
     donor_comment: DONOR_COMMENT,
     donation_amount: DONATION_AMOUNT,
     donation_currency: DONATION_CURRENCY,
     donation_tax_reclaim: DONATION_TAX_RECLAIM,
     donation_amount_local: DONATION_AMOUNT_LOCAL,
     donation_currency_local: DONATION_CURRENCY_LOCAL,
-    donor_avatar_url: DONOR_AVATAR_URL
+    donor_avatar_url: DONOR_AVATAR_URL,
+    donation_key: DONOR_NAME + DONATION_DATE_1 + DONOR_COMMENT + DONATION_AMOUNT
   },
   {
     donor_name: DONOR_NAME,
-    donation_date: DONATION_DATE,
+    donation_date: DONATION_DATE_2,
     donor_comment: DONOR_COMMENT,
     donation_amount: DONATION_AMOUNT,
     donation_currency: DONATION_CURRENCY,
     donation_tax_reclaim: DONATION_TAX_RECLAIM,
     donation_amount_local: DONATION_AMOUNT_LOCAL,
     donation_currency_local: DONATION_CURRENCY_LOCAL,
-    donor_avatar_url: DONOR_AVATAR_URL
+    donor_avatar_url: DONOR_AVATAR_URL,
+    donation_key: DONOR_NAME + DONATION_DATE_2 + DONOR_COMMENT + DONATION_AMOUNT
   },
   {
     donor_name: DONOR_NAME,
-    donation_date: DONATION_DATE,
+    donation_date: DONATION_DATE_3,
     donor_comment: DONOR_COMMENT,
     donation_amount: DONATION_AMOUNT,
     donation_currency: DONATION_CURRENCY,
     donation_tax_reclaim: DONATION_TAX_RECLAIM,
     donation_amount_local: DONATION_AMOUNT_LOCAL,
     donation_currency_local: DONATION_CURRENCY_LOCAL,
-    donor_avatar_url: DONOR_AVATAR_URL
+    donor_avatar_url: DONOR_AVATAR_URL,
+    donation_key: DONOR_NAME + DONATION_DATE_3 + DONOR_COMMENT + DONATION_AMOUNT
+  },
+  {
+    donor_name: DONOR_NAME,
+    donation_date: DONATION_DATE_4,
+    donor_comment: DONOR_COMMENT,
+    donation_amount: DONATION_AMOUNT,
+    donation_currency: DONATION_CURRENCY,
+    donation_tax_reclaim: DONATION_TAX_RECLAIM,
+    donation_amount_local: DONATION_AMOUNT_LOCAL,
+    donation_currency_local: DONATION_CURRENCY_LOCAL,
+    donor_avatar_url: DONOR_AVATAR_URL,
+    donation_key: DONOR_NAME + DONATION_DATE_4 + DONOR_COMMENT + DONATION_AMOUNT
   }
 ];
 
@@ -145,16 +163,6 @@ describe("Results returned - display heading, refresh timestamp, and donations",
       FORMATTED_TIMESTAMP
     );
   });
-
-  /*
-  it("Should display a p.refresh_link tag with the refresh link", () => {
-    props = createTestProps_DonationsReceived();
-    wrapper = shallow(<Donations {...props} />);
-    expect(wrapper.find("p.refresh_link").text()).toEqual(
-      "Refresh donation list"
-    );
-  });
-  */
 
   it("Should contain the same number of donations as there are elements in the 'donations' array prop", () => {
     props = createTestProps_DonationsReceived();

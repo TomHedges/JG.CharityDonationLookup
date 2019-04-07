@@ -189,6 +189,50 @@ exports[`Results returned - display heading, refresh timestamp, and donations Sn
         </p>
       </div>
     </div>
+    <div
+      className="donation_wrapper"
+    >
+      <div
+        className="donation_column_left"
+      >
+        <img
+          className="donor_avatar"
+          src="https://images.justgiving.com/image/f1e9879a-dace-443a-a453-d0636e66a348.jpg?template=profilesummary"
+        />
+      </div>
+      <div
+        className="donation_column_right"
+      >
+        <p
+          className="donation_date"
+        >
+          01/04/2019
+        </p>
+        <p
+          className="donor_name"
+        >
+          Tom Hedges
+        </p>
+        <p
+          className="donor_comment"
+        >
+          Good luck!
+        </p>
+        <p
+          className="donation_amount"
+        >
+          £10.00
+          <span
+            className="tax_reclaim"
+          >
+            + 
+            £
+            2.50
+             Gift Aid
+          </span>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 `;

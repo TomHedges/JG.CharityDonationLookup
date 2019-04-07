@@ -55,7 +55,6 @@ export function get_recent_donations(charity_ID) {
     let state_updates = {};
 
     if (response.status === HTTP_RESULT_STATUS.SUCCESS) {
-      //console.log(response.data.donations);
       let donations = [];
       let i;
       for (i = 0; i < response.data.donations.length; i++) {
@@ -90,6 +89,11 @@ export function get_recent_donations(charity_ID) {
         donation.donor_avatar_url = response.data.donations[i].imageUrl
           ? response.data.donations[i].imageUrl
           : "";
+        donation.donation_key =
+          donation.donor_name +
+          donation.donation_date +
+          donation.donor_comment +
+          donation.donation_amount;
         donations.push(donation);
       }
       state_updates = {

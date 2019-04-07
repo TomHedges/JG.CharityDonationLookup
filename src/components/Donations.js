@@ -18,8 +18,8 @@ import Donation from "./Donation";
 const Donations = props => {
   const donations =
     props.donations !== null && props.donations.length > 0 ? (
-      props.donations.map((donation, index) => (
-        <Donation key={index} {...donation} />
+      props.donations.map(donation => (
+        <Donation key={donation.donation_key} {...donation} />
       ))
     ) : (
       <p className="centred_text bold">No donations found.</p>
@@ -58,7 +58,8 @@ Donations.propTypes = {
       donation_currency: PropTypes.string.isRequired,
       donation_currency_local: PropTypes.string.isRequired,
       donation_amount_local: PropTypes.number.isRequired,
-      donor_avatar_url: PropTypes.string.isRequired
+      donor_avatar_url: PropTypes.string.isRequired,
+      donation_key: PropTypes.string.isRequired
     })
   )
 };

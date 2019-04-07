@@ -21,6 +21,8 @@ const NO_TAX_RECLAIM = 0;
 const USD_DONATION_AMOUNT_LOCAL = 15;
 const USD_DONATION_CURRENCY_LOCAL = "USD";
 const USD_DONATION_AMOUNT_CONVERTED = "$15.00";
+const DONATION_KEY =
+  DONOR_NAME + DONATION_DATE + DONOR_COMMENT + DONATION_AMOUNT;
 
 function createTestProps(props) {
   return {
@@ -33,6 +35,7 @@ function createTestProps(props) {
     donation_amount_local: DONATION_AMOUNT_LOCAL,
     donation_currency_local: DONATION_CURRENCY_LOCAL,
     donor_avatar_url: DONOR_AVATAR_URL,
+    donation_key: DONATION_KEY,
     ...props
   };
 }

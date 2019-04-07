@@ -1,7 +1,3 @@
-//
-// TODO - only need local currency information, not converted GBP amounts
-//
-
 /**
  * Donation.js
  * Details of a single donation. Displays amount if given (including local currency),
@@ -17,7 +13,7 @@ import PropTypes from "prop-types";
  *
  * Receives UNIX timestamp string in format "/Date(1554076800000+0000)/", and returns a UK format date in format
  * "01/04/2019" as String. Formally usedDate.toLocaleDateString() - however this is not implemented in the Node
- * core, so to avoid additional configuration for internationalisation, it is composed of individual date parts.
+ * core, so to avoid additional configuration for testing, it is composed of individual date parts.
  */
 function convertDate(textDate) {
   const donation_date_millis = parseInt(textDate.slice(6, textDate.length - 7));
@@ -67,30 +63,17 @@ function getTaxReclaim(donation_tax_reclaim, donation_currency) {
   }
 }
 
-//
-//TODO - Unnecessary inputs in function below - see comment at top
-//
 /**
- * function getDonation(donation_amount: Number, donation_currency: Number,
- *                      donation_amount_local: Number, donation_currency_local: Number,)
+ * function getDonation(donation_amount_local: Number, donation_currency_local: String,)
  * Receives the donation amount and currency shortcode in GBP and original donation currency. Where the donation
  * amount is provided, it returns a formatted String of the original donation currency/amount, else returns null.
  */
-function getDonation(
-  donation_amount,
-  donation_currency,
-  donation_amount_local,
-  donation_currency_local
-) {
-  if (donation_amount && donation_amount > 0) {
-    //if (donation_currency_local === "GBP") {
-    //  return getCurrencySymbol(donation_currency) + donation_amount.toFixed(2);
-    //} else {
+function getDonation(donation_amount_local, donation_currency_local) {
+  if (donation_amount_local && donation_amount_local > 0) {
     return (
       getCurrencySymbol(donation_currency_local) +
       donation_amount_local.toFixed(2)
     );
-    //}
   } else {
     return null;
   }
@@ -113,8 +96,6 @@ const Donation = props => (
       <p className="donor_comment">{props.donor_comment}</p>
       <p className="donation_amount">
         {getDonation(
-          props.donation_amount,
-          props.donation_currency,
           props.donation_amount_local,
           props.donation_currency_local
         )}
@@ -133,7 +114,8 @@ Donation.propTypes = {
   donation_currency: PropTypes.string.isRequired,
   donation_currency_local: PropTypes.string.isRequired,
   donation_amount_local: PropTypes.number.isRequired,
-  donor_avatar_url: PropTypes.string.isRequired
+  donor_avatar_url: PropTypes.string.isRequired,
+  donation_key: PropTypes.string.isRequired
 };
 
 export default hot(module)(Donation);
