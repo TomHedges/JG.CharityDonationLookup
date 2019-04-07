@@ -1,8 +1,8 @@
-import Donation from "../src/components/Donation";
-
 /**
  * Unit tests for the Donation component
  */
+
+import Donation from "../src/components/Donation";
 
 const DONOR_NAME = "Tom Hedges";
 const DONATION_DATE = "/Date(1554076800000+0000)/";

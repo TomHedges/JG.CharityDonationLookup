@@ -1,8 +1,8 @@
-import Page from "../src/components/Page";
-
 /**
  * Unit tests for the Page component
  */
+
+import Page from "../src/components/Page";
 
 let wrapper;
 

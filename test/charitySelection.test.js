@@ -1,9 +1,9 @@
-import CharitySelection from "../src/components/CharitySelection";
-import { handleSubmit } from "../src/scripts/event_handlers.js";
-
 /**
  * Unit tests for the CharitySelection component
  */
+
+import CharitySelection from "../src/components/CharitySelection";
+import { handleSubmit } from "../src/scripts/event_handlers.js";
 
 const TEST_CHARITY_SLUG = "Tom's Great Charity (12345)";
 const TEST_CHARITY_ID = "98765";

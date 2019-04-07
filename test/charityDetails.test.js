@@ -1,8 +1,8 @@
-import CharityDetails from "../src/components/CharityDetails";
-
 /**
  * Unit tests for the CharityDetails component
  */
+
+import CharityDetails from "../src/components/CharityDetails";
 
 const HEADING = "Charity Details:";
 const CHARITY_LOGO_URL =

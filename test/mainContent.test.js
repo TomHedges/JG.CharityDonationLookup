@@ -1,45 +1,10 @@
-import MainContent from "../src/components/MainContent";
-
 /**
  * Unit tests for the MainContent component
  */
 
+import MainContent from "../src/components/MainContent";
+
 let wrapper;
-
-/*
-function createTestProps(props) {
-  return {
-    charity_selected: false,
-    charity_was_found: false,
-    show_list: true,
-    charity_ID: "",
-    charity_details_found: {
-      charity_logo_url: "",
-      charity_website: "",
-      charity_number: "",
-      charity_name: "",
-      charity_description: ""
-    },
-    charity_details_displayed: {
-      charity_logo_url: "",
-      charity_website: "",
-      charity_number: "",
-      charity_name: "",
-      charity_description: ""
-    },
-    charity_slug: "",
-    timestamp: "",
-    donations: null,
-    ...props
-  };
-}
-
-
-beforeEach(() => {
-  props = createTestProps();
-  //wrapper = shallow(<MainContent {...props} />);
-});
-*/
 
 describe("<MainContent /> rendering", () => {
   it("Should render <MainContent /> component", () => {

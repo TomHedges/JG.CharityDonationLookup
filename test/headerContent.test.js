@@ -1,8 +1,8 @@
-import HeaderContent from "../src/components/HeaderContent";
-
 /**
  * Unit tests for the HeaderContent component
  */
+
+import HeaderContent from "../src/components/HeaderContent";
 
 const HEADING = "JG Donations Report";
 

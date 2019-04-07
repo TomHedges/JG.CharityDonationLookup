@@ -1,8 +1,8 @@
-import Donations from "../src/components/Donations";
-
 /**
  * Unit tests for the Donations component
  */
+
+import Donations from "../src/components/Donations";
 
 const TIMESTAMP = "04/04/2019, 19:42:15";
 const FORMATTED_TIMESTAMP =

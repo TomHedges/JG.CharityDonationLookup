@@ -1,8 +1,8 @@
-import FooterContent from "../src/components/FooterContent";
-
 /**
  * Unit tests for the FooterContent component
  */
+
+import FooterContent from "../src/components/FooterContent";
 
 const HEADING = "JG Donations Report";
 

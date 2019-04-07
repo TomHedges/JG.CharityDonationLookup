@@ -1,3 +1,7 @@
+/**
+ * Unit tests for the http_request.js
+ */
+
 import { http_request } from "../src/scripts/http_request";
 import { HTTP_RESULT_STATUS } from "../src/constants/constants";
 
