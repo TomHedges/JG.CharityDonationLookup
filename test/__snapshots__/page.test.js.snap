@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Page /> displays HeaderContent, MainContent and FooterContent Snapshot contains HeaderContent, MainContent and FooterContent components 1`] = `
+Array [
+  <div
+    className="header_content side_pad"
+  >
+    <img
+      className="jg_logo"
+      src={[Function]}
+    />
+    <h1>
+      JustGiving Donation Feed
+    </h1>
+  </div>,
+  <div
+    className="main_content side_pad"
+  >
+    <div
+      className="charity_selection"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <label
+          htmlFor="charity_id"
+        >
+          Please enter Charity ID and select charity from dropdown list:
+        </label>
+        <div
+          className="dropdown_wrapper"
+        >
+          <input
+            className="charity_id_selector"
+            id="charity_id"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <div
+            className="dropdown_content_shown"
+          />
+        </div>
+      </form>
+    </div>
+  </div>,
+  <div
+    className="footer_content side_pad"
+  >
+    <p>
+      © Tom Hedges 2019 - 
+      JustGiving Donation Feed
+    </p>
+  </div>,
+]
+`;
