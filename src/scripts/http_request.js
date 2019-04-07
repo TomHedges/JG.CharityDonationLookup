@@ -2,13 +2,12 @@ import axios from "axios";
 import { HTTP_RESULT_STATUS } from "../constants/constants";
 
 export function http_request(url, headers) {
-  let instance = axios.create({
+  const config = {
     headers: headers,
     timeout: 3500
-  });
-
-  return instance
-    .get(url)
+  };
+  return axios
+    .get(url, config)
     .then(res => {
       let response = {};
       response.status = HTTP_RESULT_STATUS.SUCCESS;

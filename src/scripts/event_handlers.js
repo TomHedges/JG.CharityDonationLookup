@@ -96,12 +96,8 @@ function add_latest_donations(current_donations, new_donations) {
 
   if (current_donations === null) {
     combined_donations = new_donations;
-    console.log(
-      "current dons are null... Length: " + combined_donations.length
-    );
   } else {
     combined_donations = current_donations;
-    console.log("current dons have length: " + combined_donations.length);
     var numberToAdd = new_donations.length;
     for (var i = 0; i < new_donations.length - 1; i++) {
       if (current_donations[0].donation_key === new_donations[i].donation_key) {
