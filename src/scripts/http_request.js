@@ -4,7 +4,7 @@ import { HTTP_RESULT_STATUS } from "../constants/constants";
 export function http_request(url, headers) {
   const config = {
     headers: headers,
-    timeout: 3500
+    timeout: 5000
   };
   return axios
     .get(url, config)

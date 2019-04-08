@@ -27,13 +27,14 @@ Built in response to [Recruitment Test - Charity Donations](https://github.com/J
 
 _This project created in a Windows 10, VSCode 1.33 environment_
 
-1. Clone this repo
-2. Create a [JustGiving Developer](https://developer.justgiving.com/) account to obtain an `appId`
-3. Rename 'src/constants/api_key.change_to_just_js' to 'src/constants/api_key.js' (change only file extension)
-4. In the renamed file, replace `YOUR_JG_API_KEY` with the `appId` from step 2. Save and close file.
-5. Install dependencies with 'npm install'
-6. Run in dev mode with 'npm start' - go to [http://localhost:4000](http://localhost:4000)
-7. Run tests (Jest/Enzyme) with 'npm test'
+1. Clone this repo (`git clone https://github.com/TomHedges/JG.CharityDonationLookup.git`)
+2. Enter the approraite folder (`cd JG.CharityDonationLookup`)
+3. Create a [JustGiving Developer](https://developer.justgiving.com/) account to obtain an `appId`
+4. Rename 'src/constants/api_key.change_to_just_js' to 'src/constants/api_key.js' (change only file extension)
+5. In the renamed file, replace `YOUR_JG_API_KEY` with the `appId` from step 2. Save and close file.
+6. Install dependencies with `npm install`
+7. Run in dev mode with `npm start` - go to [http://localhost:4000](http://localhost:4000) in your web browser of choice
+8. Run tests (Jest/Enzyme) with `npm test`
    - Note: Some tests currently return the message: 'Warning: Each child in a list should have a unique "key" prop.' However, this error appears out of context (related to Components containing no Lists or Arrays), and is not displayed when used in-browser. Potentially a bug in the testing framework.
 
 ## Key details:
