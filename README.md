@@ -2,8 +2,8 @@
 
 ## Summary:
 
+Response to [Recruitment Test - Charity Donations](https://github.com/JustGiving/recruitment-test-donations).
 Very basic React implementation, avoiding create-react-app to reduce overhead and provide a learning experience.
-Built in response to [Recruitment Test - Charity Donations](https://github.com/JustGiving/recruitment-test-donations)
 
 ### Concept:
 
