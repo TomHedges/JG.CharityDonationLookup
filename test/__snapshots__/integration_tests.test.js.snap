@@ -1,0 +1,806 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should clear state state and display when the input is emptied 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <div
+        className="dropdown_content_shown"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should have some blank states and no data displayed on intial load 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <div
+        className="dropdown_content_shown"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should hold list of 2 donations in state and display them 1`] = `
+Array [
+  Object {
+    "donation_amount": 0,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "",
+    "donation_key": "0",
+    "donation_tax_reclaim": 0,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "",
+    "donor_name": "",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 0,
+    "donation_currency": "",
+    "donation_currency_local": "",
+    "donation_date": "/Date(1554076800002+0000)/",
+    "donation_key": "Bob/Date(1554076800002+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+]
+`;
+
+exports[`Should hold list of 4 donations in state and display them 1`] = `
+Array [
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800005+0000)/",
+    "donation_key": "Bob/Date(1554076800005+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800006+0000)/",
+    "donation_key": "Bob/Date(1554076800006+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800007+0000)/",
+    "donation_key": "Bob/Date(1554076800007+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800008+0000)/",
+    "donation_key": "Bob/Date(1554076800008+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+]
+`;
+
+exports[`Should leave donations displayed, but search for new charity details when the input is changed to 2 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value="2"
+      />
+      <div
+        className="dropdown_content_shown"
+      >
+        <span
+          className="charity_result"
+          id="charity_result"
+          onClick={[Function]}
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should update display with details of charity, request donations and show loading spinner 1`] = `
+<div
+  className="charity_details"
+>
+  <h2>
+    Charity Details:
+  </h2>
+  <div
+    className="charity_details_column_wrapper"
+  >
+    <div
+      className="charity_details_column_left"
+    >
+      <a
+        href="www.oxfam.com"
+        target="_blank"
+      >
+        <img
+          className="charity_logo"
+          src="www.oxfam.com/logo.jpeg"
+        />
+      </a>
+    </div>
+    <div
+      className="charity_details_column_right"
+    >
+      <h3>
+        <a
+          href="www.oxfam.com"
+          target="_blank"
+        >
+          Oxfam
+        </a>
+      </h3>
+      <p>
+        Some words about the charity
+      </p>
+      <p
+        className="bold"
+      >
+        Reg. Charity Number: 
+        884736
+      </p>
+      <p
+        className="bold"
+      >
+        <a
+          href="www.oxfam.com"
+          target="_blank"
+        >
+          www.oxfam.com
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should update state and display with loading message when the input is changed to 1 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value="1"
+      />
+      <div
+        className="dropdown_content_shown"
+      >
+        <span
+          className="charity_result"
+          id="charity_result"
+          onClick={[Function]}
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should update state and display with loading message when the input is changed to 9 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value="9"
+      />
+      <div
+        className="dropdown_content_shown"
+      >
+        <span
+          className="charity_result"
+          id="charity_result"
+          onClick={[Function]}
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should update state and display with loading message when the input is changed to 99 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value="99"
+      />
+      <div
+        className="dropdown_content_shown"
+      >
+        <span
+          className="charity_result"
+          id="charity_result"
+          onClick={[Function]}
+        >
+          Loading...
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should update state and display with returned charity data 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value="99"
+      />
+      <div
+        className="dropdown_content_shown"
+      >
+        <span
+          className="charity_result"
+          id="charity_result"
+          onClick={[Function]}
+        >
+          Barnados (Reg. Charity No. 111333)
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should update state and display with returned data about new charity with ID 2 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value="2"
+      />
+      <div
+        className="dropdown_content_hidden"
+      >
+        <span
+          className="charity_result"
+          id="charity_result"
+          onClick={[Function]}
+        >
+          Oxfam (Reg. Charity No. 884736)
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should update state and display with returned error message, as this is not a known charity ID 1`] = `
+<div
+  className="charity_selection"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="charity_id"
+    >
+      Please enter Charity ID and select charity from dropdown list:
+    </label>
+    <div
+      className="dropdown_wrapper"
+    >
+      <input
+        className="charity_id_selector"
+        id="charity_id"
+        onChange={[Function]}
+        type="text"
+        value="9"
+      />
+      <div
+        className="dropdown_content_shown"
+      >
+        <span
+          className="charity_result"
+          id="charity_result"
+          onClick={[Function]}
+        >
+          Sorry! That charity ID may be invalid or you may have lost internet connection
+        </span>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Should update state and dropdown display with new charity data 1`] = `
+<div
+  className="charity_details"
+>
+  <h2>
+    Charity Details:
+  </h2>
+  <div
+    className="charity_details_column_wrapper"
+  >
+    <div
+      className="charity_details_column_left"
+    >
+      <a
+        href="www.oxfam.com"
+        target="_blank"
+      >
+        <img
+          className="charity_logo"
+          src="www.oxfam.com/logo.jpeg"
+        />
+      </a>
+    </div>
+    <div
+      className="charity_details_column_right"
+    >
+      <h3>
+        <a
+          href="www.oxfam.com"
+          target="_blank"
+        >
+          Oxfam
+        </a>
+      </h3>
+      <p>
+        Some words about the charity
+      </p>
+      <p
+        className="bold"
+      >
+        Reg. Charity Number: 
+        884736
+      </p>
+      <p
+        className="bold"
+      >
+        <a
+          href="www.oxfam.com"
+          target="_blank"
+        >
+          www.oxfam.com
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Should update state and results display with details of charity 1 1`] = `null`;
+
+exports[`Should wait for the auto-refresh process to complete again, and ensure that another 2 additional donations are displayed 1`] = `
+Array [
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800001+0000)/",
+    "donation_key": "Bob/Date(1554076800001+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800002+0000)/",
+    "donation_key": "Bob/Date(1554076800002+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800003+0000)/",
+    "donation_key": "Bob/Date(1554076800003+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800004+0000)/",
+    "donation_key": "Bob/Date(1554076800004+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800005+0000)/",
+    "donation_key": "Bob/Date(1554076800005+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800006+0000)/",
+    "donation_key": "Bob/Date(1554076800006+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800007+0000)/",
+    "donation_key": "Bob/Date(1554076800007+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800008+0000)/",
+    "donation_key": "Bob/Date(1554076800008+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+]
+`;
+
+exports[`Should wait for the auto-refresh process to complete again, and ensure that donations data has not changed (as there were no updates) 1`] = `
+Array [
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800001+0000)/",
+    "donation_key": "Bob/Date(1554076800001+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800002+0000)/",
+    "donation_key": "Bob/Date(1554076800002+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800003+0000)/",
+    "donation_key": "Bob/Date(1554076800003+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800004+0000)/",
+    "donation_key": "Bob/Date(1554076800004+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800005+0000)/",
+    "donation_key": "Bob/Date(1554076800005+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800006+0000)/",
+    "donation_key": "Bob/Date(1554076800006+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800007+0000)/",
+    "donation_key": "Bob/Date(1554076800007+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800008+0000)/",
+    "donation_key": "Bob/Date(1554076800008+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+]
+`;
+
+exports[`Should wait for the auto-refresh process to complete once, and ensure that 2 additional donations are displayed 1`] = `
+Array [
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800003+0000)/",
+    "donation_key": "Bob/Date(1554076800003+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800004+0000)/",
+    "donation_key": "Bob/Date(1554076800004+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800005+0000)/",
+    "donation_key": "Bob/Date(1554076800005+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800006+0000)/",
+    "donation_key": "Bob/Date(1554076800006+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800007+0000)/",
+    "donation_key": "Bob/Date(1554076800007+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+  Object {
+    "donation_amount": 50.23,
+    "donation_amount_local": 50.23,
+    "donation_currency": "GBP",
+    "donation_currency_local": "GBP",
+    "donation_date": "/Date(1554076800008+0000)/",
+    "donation_key": "Bob/Date(1554076800008+0000)/From bob with love50.23",
+    "donation_tax_reclaim": 3,
+    "donor_avatar_url": "www.link.com/to_image.jpg",
+    "donor_comment": "From bob with love",
+    "donor_name": "Bob",
+  },
+]
+`;

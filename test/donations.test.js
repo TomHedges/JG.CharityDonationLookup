@@ -4,9 +4,9 @@
 
 import Donations from "../src/components/Donations";
 
-const TIMESTAMP = "04/04/2019, 19:42:15";
+const TIMESTAMP = "1550726992000";
 const FORMATTED_TIMESTAMP =
-  "Last refreshed: " + TIMESTAMP + " (Refreshes every 10 seconds)";
+  "Last refreshed: 21/02/2019 @ 05:29:52 (Refreshes every 10 seconds)";
 const HANDLE_CLICK = jest.fn();
 
 const DONOR_NAME = "Tom Hedges";

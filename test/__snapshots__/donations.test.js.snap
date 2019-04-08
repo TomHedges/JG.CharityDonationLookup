@@ -29,7 +29,7 @@ exports[`No results returned - display heading, refresh timestamp, and message '
     className="refresh_message"
   >
     Last refreshed: 
-    04/04/2019, 19:42:15
+    21/02/2019 @ 05:29:52
      (Refreshes every 10 seconds)
   </p>
   <div>
@@ -53,7 +53,7 @@ exports[`Results returned - display heading, refresh timestamp, and donations Sn
     className="refresh_message"
   >
     Last refreshed: 
-    04/04/2019, 19:42:15
+    21/02/2019 @ 05:29:52
      (Refreshes every 10 seconds)
   </p>
   <div>

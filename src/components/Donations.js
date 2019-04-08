@@ -9,6 +9,29 @@ import PropTypes from "prop-types";
 import Donation from "./Donation";
 
 /**
+ * function convertDate(timeInMillis: Number)
+ *
+ * Receives UNIX timestamp string in format 1550725040858, and returns a UK format date in format
+ * "21/02/2019 @ 04:57:20" as String.
+ */
+function convertDate(timeInMillis) {
+  const date = new Date(parseInt(timeInMillis));
+  return (
+    ("0" + date.getDate()).slice(-2) +
+    "/" +
+    ("0" + (date.getMonth() + 1)).slice(-2) +
+    "/" +
+    date.getFullYear() +
+    " @ " +
+    ("0" + date.getHours()).slice(-2) +
+    ":" +
+    ("0" + date.getMinutes()).slice(-2) +
+    ":" +
+    ("0" + date.getSeconds()).slice(-2)
+  );
+}
+
+/**
  * const Donations
  * Returns a heading and one of:
  *  - loading spinner/message
@@ -36,7 +59,8 @@ const Donations = props => {
       ) : (
         <>
           <p className="refresh_message">
-            Last refreshed: {props.timestamp} (Refreshes every 10 seconds)
+            Last refreshed: {convertDate(props.timestamp)} (Refreshes every 10
+            seconds)
           </p>
           <div>{donations}</div>
         </>

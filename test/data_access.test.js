@@ -67,7 +67,7 @@ describe("Successful donations request", () => {
         donations: [
           {
             donor_name: "Bob",
-            donation_date: "/Date(1554076800001+0000)/",
+            donation_date: "/Date(1554076800005+0000)/",
             donor_comment: "From bob with love",
             donation_amount: 50.23,
             donation_tax_reclaim: 3,
@@ -77,13 +77,13 @@ describe("Successful donations request", () => {
             donor_avatar_url: "www.link.com/to_image.jpg",
             donation_key:
               "Bob" +
-              "/Date(1554076800001+0000)/" +
+              "/Date(1554076800005+0000)/" +
               "From bob with love" +
               "50.23"
           },
           {
             donor_name: "Bob",
-            donation_date: "/Date(1554076800002+0000)/",
+            donation_date: "/Date(1554076800006+0000)/",
             donor_comment: "From bob with love",
             donation_amount: 50.23,
             donation_tax_reclaim: 3,
@@ -93,13 +93,13 @@ describe("Successful donations request", () => {
             donor_avatar_url: "www.link.com/to_image.jpg",
             donation_key:
               "Bob" +
-              "/Date(1554076800002+0000)/" +
+              "/Date(1554076800006+0000)/" +
               "From bob with love" +
               "50.23"
           },
           {
             donor_name: "Bob",
-            donation_date: "/Date(1554076800003+0000)/",
+            donation_date: "/Date(1554076800007+0000)/",
             donor_comment: "From bob with love",
             donation_amount: 50.23,
             donation_tax_reclaim: 3,
@@ -109,13 +109,13 @@ describe("Successful donations request", () => {
             donor_avatar_url: "www.link.com/to_image.jpg",
             donation_key:
               "Bob" +
-              "/Date(1554076800003+0000)/" +
+              "/Date(1554076800007+0000)/" +
               "From bob with love" +
               "50.23"
           },
           {
             donor_name: "Bob",
-            donation_date: "/Date(1554076800004+0000)/",
+            donation_date: "/Date(1554076800008+0000)/",
             donor_comment: "From bob with love",
             donation_amount: 50.23,
             donation_tax_reclaim: 3,
@@ -125,7 +125,7 @@ describe("Successful donations request", () => {
             donor_avatar_url: "www.link.com/to_image.jpg",
             donation_key:
               "Bob" +
-              "/Date(1554076800004+0000)/" +
+              "/Date(1554076800008+0000)/" +
               "From bob with love" +
               "50.23"
           }

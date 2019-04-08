@@ -45,7 +45,6 @@ export function handleChange(event) {
 }
 
 export function handleClick(event) {
-  console.log("handleClick called!");
   if (event.target.id === "charity_result") {
     clearTimeout(timer);
     if (this.state.charity_was_found) {
@@ -71,8 +70,7 @@ export function handleSubmit(event) {
 
 function update_donations_list(context) {
   get_recent_donations(context.state.charity_ID).then(state_updates => {
-    const date = new Date();
-    const timestamp = date.toLocaleString();
+    const timestamp = new Date().getTime() + "";
     const donations = add_latest_donations(
       context.state.donations,
       state_updates.donations
@@ -104,9 +102,11 @@ function add_latest_donations(current_donations, new_donations) {
         numberToAdd = i;
       }
     }
-    for (var i = 0; i < numberToAdd; i++) {
-      combined_donations.unshift(new_donations[i]);
-    }
+    combined_donations = new_donations.slice(0, numberToAdd);
+    combined_donations = combined_donations.concat(current_donations);
+    //for (var i = 0; i < numberToAdd; i++) {
+    //  combined_donations.unshift(new_donations[i]);
+    //}
   }
 
   return combined_donations;

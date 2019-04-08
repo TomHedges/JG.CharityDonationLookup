@@ -8,11 +8,21 @@ const CHARITY_WEBSITE = "www.oxfam.com";
 const CHARITY_NUMBER = "884736";
 const CHARITY_DESCRIPTION = "Some words about the charity";
 
+const SECOND_CHARITY_NAME = "Barnados";
+const SECOND_CHARITY_LOGO_URL = "www.barnados.co.uk/logo.jpeg";
+const SECOND_CHARITY_WEBSITE = "www.barnados.co.uk";
+const SECOND_CHARITY_NUMBER = "111333";
+const SECOND_CHARITY_DESCRIPTION = "A description of the Barnados work";
+
 const DONOR_DISPLAY_NAME = "Bob";
 const DONATION_DATE_1 = "/Date(1554076800001+0000)/";
 const DONATION_DATE_2 = "/Date(1554076800002+0000)/";
 const DONATION_DATE_3 = "/Date(1554076800003+0000)/";
 const DONATION_DATE_4 = "/Date(1554076800004+0000)/";
+const DONATION_DATE_5 = "/Date(1554076800005+0000)/";
+const DONATION_DATE_6 = "/Date(1554076800006+0000)/";
+const DONATION_DATE_7 = "/Date(1554076800007+0000)/";
+const DONATION_DATE_8 = "/Date(1554076800008+0000)/";
 const MESSAGE = "From bob with love";
 const AMOUNT = 50.23;
 const ESTIMATE_TAX_RECLAIM = 3;
@@ -26,6 +36,7 @@ module.exports = {
     /*
      *  http_request.js Unit Tests
      */
+    //console.log(url);
 
     switch (url) {
       case "charity_details":
@@ -105,6 +116,163 @@ module.exports = {
             donations: [
               {
                 donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_5,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              },
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_6,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              },
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_7,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              },
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_8,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              }
+            ]
+          }
+        });
+
+      case "https://api.justgiving.com/975998a1/v1/charity/2/donations":
+        return Promise.resolve({
+          data: {
+            donations: [
+              {
+                donorDisplayName: null,
+                donationDate: null,
+                message: null,
+                amount: null,
+                estimatedTaxReclaim: null,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              },
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_2,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: null,
+                donorLocalCurrencyCode: null,
+                donorLocalAmount: null,
+                imageUrl: null
+              }
+            ]
+          }
+        });
+
+      case "https://api.justgiving.com/975998a1/v1/charity/3/donations":
+        return Promise.reject({});
+
+      /*
+       *  Integration tests
+       */
+
+      case "https://api.justgiving.com/975998a1/v1/charity/9":
+        return Promise.reject({
+          request: {}
+        });
+
+      case "https://api.justgiving.com/975998a1/v1/charity/99":
+        return Promise.resolve({
+          data: {
+            name: SECOND_CHARITY_NAME,
+            logoAbsoluteUrl: SECOND_CHARITY_LOGO_URL,
+            websiteUrl: SECOND_CHARITY_WEBSITE,
+            registrationNumber: SECOND_CHARITY_NUMBER,
+            description: SECOND_CHARITY_DESCRIPTION
+          }
+        });
+
+      case "https://api.justgiving.com/975998a1/v1/charity/1b/donations":
+        return Promise.resolve({
+          data: {
+            donations: [
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_3,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              },
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_4,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              },
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_5,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              },
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
+                donationDate: DONATION_DATE_6,
+                message: MESSAGE,
+                amount: AMOUNT,
+                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
+                currencyCode: CURRENCY_CODE,
+                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
+                donorLocalAmount: DONOR_LOCAL_AMOUNT,
+                imageUrl: IMAGE_URL
+              }
+            ]
+          }
+        });
+
+      case "https://api.justgiving.com/975998a1/v1/charity/1c/donations":
+        return Promise.resolve({
+          data: {
+            donations: [
+              {
+                donorDisplayName: DONOR_DISPLAY_NAME,
                 donationDate: DONATION_DATE_1,
                 message: MESSAGE,
                 amount: AMOUNT,
@@ -150,39 +318,6 @@ module.exports = {
             ]
           }
         });
-
-      case "https://api.justgiving.com/975998a1/v1/charity/2/donations":
-        return Promise.resolve({
-          data: {
-            donations: [
-              {
-                donorDisplayName: null,
-                donationDate: null,
-                message: null,
-                amount: null,
-                estimatedTaxReclaim: null,
-                currencyCode: CURRENCY_CODE,
-                donorLocalCurrencyCode: DONOR_LOCAL_CURRENCY_CODE,
-                donorLocalAmount: DONOR_LOCAL_AMOUNT,
-                imageUrl: IMAGE_URL
-              },
-              {
-                donorDisplayName: DONOR_DISPLAY_NAME,
-                donationDate: DONATION_DATE_2,
-                message: MESSAGE,
-                amount: AMOUNT,
-                estimatedTaxReclaim: ESTIMATE_TAX_RECLAIM,
-                currencyCode: null,
-                donorLocalCurrencyCode: null,
-                donorLocalAmount: null,
-                imageUrl: null
-              }
-            ]
-          }
-        });
-
-      case "https://api.justgiving.com/975998a1/v1/charity/3/donations":
-        return Promise.reject({});
 
       /*
        *  Fallback for any mocked requests
