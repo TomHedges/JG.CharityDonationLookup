@@ -1,3 +1,8 @@
+/*
+ * index.js
+ * React entry point and some top-level configuration
+ */
+
 import React from "react";
 import ReactDOM from "react-dom";
 import Page from "./../components/Page.js";

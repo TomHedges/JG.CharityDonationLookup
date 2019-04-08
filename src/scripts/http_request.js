@@ -1,6 +1,15 @@
+/*
+ * http_request.js
+ * Wrapper forthe Axios HTTP request library. De-couples axiops-specific implementation details from rest of app.
+ */
+
 import axios from "axios";
 import { HTTP_RESULT_STATUS } from "../constants/constants";
 
+/*
+ * function http_request(url: String, headers: JSONObject)
+ * Receives a URL and any headers that are required. Makes request and returns raw response or an error message.
+ */
 export function http_request(url, headers) {
   const config = {
     headers: headers,

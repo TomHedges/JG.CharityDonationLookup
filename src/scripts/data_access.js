@@ -1,3 +1,10 @@
+/*
+ * data_access.js
+ * Helper functions to de-couple the React-aware fuctionality from the HTTP library.
+ * Provides a consistent API - making and consuming HTTP requests, and converting response or error
+ * data into a format that is suitable for the React App business logic.
+ */
+
 import { HTTP_RESULT_STATUS } from "../constants/constants";
 import { API_KEY } from "../constants/api_key";
 import { http_request } from "./http_request";
@@ -6,6 +13,12 @@ const URL_ROOT = "https://api.justgiving.com/" + API_KEY + "/v1";
 const URL_CHARITY_DETAILS = URL_ROOT + "/charity/";
 const headers = { "Content-Type": "application/json" };
 
+/*
+ * function get_charity_details(charity_ID: String)
+ * Receives a charity_ID, generates the URL for a charity details request, and forwards to the HTTP request function.
+ * Returns the charity details data, or an error message.
+ * Errors commonly returned as user enters IDs which return 4xx or 5xx range errors from the JustGiving server.
+ */
 export function get_charity_details(charity_ID) {
   const url = URL_CHARITY_DETAILS + charity_ID;
   return http_request(url, headers).then(response => {
@@ -49,6 +62,11 @@ export function get_charity_details(charity_ID) {
   });
 }
 
+/*
+ * function get_recent_donations(charity_ID: String)
+ * Receives a charity_ID, generates the URL for a donations request, and forwards to the HTTP request function.
+ * Returns the donation data, or an error message.
+ */
 export function get_recent_donations(charity_ID) {
   const url = URL_CHARITY_DETAILS + charity_ID + "/donations";
   return http_request(url, headers).then(response => {
