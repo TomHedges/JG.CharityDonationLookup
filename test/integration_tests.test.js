@@ -238,7 +238,7 @@ it("Should hold list of 4 donations in state and display them", () => {
 
 it("Should wait for the auto-refresh process to complete once, and ensure that 2 additional donations are displayed", done => {
   // This setState is a hack to force mocked HTTP request library to return "more recent" donations
-  wrapper.setState({ charity_ID: "1b" });
+  wrapper.setState({ charity_ID_displayed: "1b" });
   wrapper.update();
 
   setTimeout(() => {
@@ -250,7 +250,7 @@ it("Should wait for the auto-refresh process to complete once, and ensure that 2
 
 it("Should wait for the auto-refresh process to complete again, and ensure that another 2 additional donations are displayed", done => {
   // This setState is a hack to force mocked HTTP request library to return "more recent" donations
-  wrapper.setState({ charity_ID: "1c" });
+  wrapper.setState({ charity_ID_displayed: "1c" });
   wrapper.update();
 
   setTimeout(() => {

@@ -27,13 +27,13 @@ export function handleChange(event) {
     this.setState({
       charity_ID: "",
       charity_details_found: blank_charity_details,
-      charity_ID_searched: "",
+      //charity_ID_searched: "",
       charity_slug: ""
     });
   } else {
     this.setState({
       charity_ID: value,
-      charity_ID_searched: value,
+      //charity_ID_searched: value,
       charity_details_found: blank_charity_details,
       charity_was_found: false,
       charity_slug: "Loading...",
@@ -42,7 +42,8 @@ export function handleChange(event) {
 
     get_charity_details(value).then(state_updates => {
       if (
-        this.state.charity_ID_searched === state_updates.charity_ID_searched
+        //this.state.charity_ID_searched === state_updates.charity_ID_searched
+        this.state.charity_ID === state_updates.charity_ID_searched
       ) {
         this.setState({
           charity_was_found: state_updates.charity_was_found,
@@ -65,6 +66,7 @@ export function handleClick(event) {
     if (this.state.charity_was_found) {
       this.setState(
         {
+          charity_ID_displayed: this.state.charity_ID,
           charity_selected: true,
           charity_details_displayed: this.state.charity_details_found,
           show_list: false,
@@ -84,24 +86,27 @@ export function handleClick(event) {
  * Allows the donations search to be repeated automatically.
  */
 function update_donations_list(context) {
-  get_recent_donations(context.state.charity_ID).then(state_updates => {
-    const timestamp = new Date().getTime() + "";
-    const donations = add_latest_donations(
-      context.state.donations,
-      state_updates.donations
-    );
-    context.setState(
-      {
-        timestamp: timestamp,
-        donations: donations
-      },
-      () => {
-        timer = setTimeout(() => {
-          update_donations_list(context);
-        }, 10000);
-      }
-    );
-  });
+  //get_recent_donations(context.state.charity_ID).then(state_updates => {
+  get_recent_donations(context.state.charity_ID_displayed).then(
+    state_updates => {
+      const timestamp = new Date().getTime() + "";
+      const donations = add_latest_donations(
+        context.state.donations,
+        state_updates.donations
+      );
+      context.setState(
+        {
+          timestamp: timestamp,
+          donations: donations
+        },
+        () => {
+          timer = setTimeout(() => {
+            update_donations_list(context);
+          }, 10000);
+        }
+      );
+    }
+  );
 }
 
 /*
